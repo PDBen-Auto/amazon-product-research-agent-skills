@@ -1,0 +1,7 @@
+interface:
+  display_name: "Amazon Product Research Suite"
+  short_description: "Route Amazon research to the right product skill"
+  default_prompt: "Use $amazon-product-research-suite to route this Amazon product question, list missing evidence, and propose the smallest execution plan."
+
+policy:
+  allow_implicit_invocation: true

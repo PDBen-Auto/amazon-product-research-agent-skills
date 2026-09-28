@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "suite": "amazon-product-research-agent-skills",
+  "skills": [
+    {
+      "id": "amazon-review-intelligence",
+      "name": "Amazon Review Intelligence",
+      "repository": "PDBen-Auto/amazon-review-intelligence-skill",
+      "skill_name": "amazon-review-scraper",
+      "url": "https://github.com/PDBen-Auto/amazon-review-intelligence-skill",
+      "install": "npx skills add PDBen-Auto/amazon-review-intelligence-skill",
+      "triggers": ["Amazon reviews", "VOC", "complaints", "customer pain", "review scraper"],
+      "outputs": ["canonical JSON", "Excel evidence workbook", "offline HTML report"]
+    },
+    {
+      "id": "design-patent-search-and-design-around",
+      "name": "Design Patent Search and Design-around",
+      "repository": "PDBen-Auto/design-patent-design-around-skill",
+      "skill_name": "design-patent-search-and-design-around",
+      "url": "https://github.com/PDBen-Auto/design-patent-design-around-skill",
+      "install": "npx skills add PDBen-Auto/design-patent-design-around-skill --skill design-patent-search-and-design-around",
+      "triggers": ["design patent", "visual similarity", "design-around", "product drawing"],
+      "outputs": ["search log", "drawing-based scope notes", "redesign directions", "sample gates"]
+    },
+    {
+      "id": "sellersprite-bi-market-research",
+      "name": "SellerSprite Amazon Market Research BI",
+      "repository": "PDBen-Auto/sellersprite-amazon-market-research-bi-skill",
+      "skill_name": "sellersprite-bi-market-research",
+      "url": "https://github.com/PDBen-Auto/sellersprite-amazon-market-research-bi-skill",
+      "install": "npx skills add PDBen-Auto/sellersprite-amazon-market-research-bi-skill --skill sellersprite-bi-market-research",
+      "triggers": ["Amazon market research", "SellerSprite", "keyword expansion", "ASIN market size", "BI dashboard"],
+      "outputs": ["candidate manifest", "parent-ASIN summary", "coverage-gated BI HTML"]
+    },
+    {
+      "id": "amazon-product-decision-gateway",
+      "name": "Amazon Product Decision Gateway",
+      "repository": "PDBen-Auto/amazon-product-decision-suite",
+      "skill_name": "amazon-product-decision-gateway",
+      "url": "https://github.com/PDBen-Auto/amazon-product-decision-suite",
+      "install": "npx skills add PDBen-Auto/amazon-product-decision-suite --skill amazon-product-decision-gateway",
+      "triggers": ["product validation", "supplier feasibility", "unit economics", "Go/No-Go", "stage gate"],
+      "outputs": ["sanitized evidence bundle", "validation report", "signed private-engine handoff"]
+    }
+  ]
+}
