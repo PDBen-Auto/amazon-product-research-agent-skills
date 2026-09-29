@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0",
+  "base": {
+    "scenario_name": "illustrative-base",
+    "marketplace": "Amazon US",
+    "currency": "USD",
+    "per_unit": {
+      "selling_price": 29.99,
+      "realized_revenue_after_returns": 28.1906,
+      "referral_fee": 4.22859,
+      "fulfillment_fee": 4.25,
+      "landed_product_cost": 7.8,
+      "expected_return_loss": 0.48,
+      "advertising_cost": 4.1986,
+      "other_variable_cost": 0.55,
+      "contribution_profit": 6.68341,
+      "contribution_margin": 0.222855,
+      "break_even_acos": 0.362855
+    },
+    "first_order_cash": {
+      "order_units": 1000,
+      "purchase_order_total": 7800.0,
+      "cash_due_at_order": 2340.0,
+      "cash_due_before_shipment": 5460.0,
+      "tooling_cost": 1800.0,
+      "setup_cost": 450.0,
+      "working_capital_buffer": 2500.0,
+      "total_first_order_cash_required": 12550.0
+    }
+  },
+  "scenarios": [
+    {
+      "scenario_name": "higher-returns",
+      "marketplace": "Amazon US",
+      "currency": "USD",
+      "per_unit": {
+        "selling_price": 29.99,
+        "realized_revenue_after_returns": 25.7914,
+        "referral_fee": 3.86871,
+        "fulfillment_fee": 4.25,
+        "landed_product_cost": 7.8,
+        "expected_return_loss": 1.12,
+        "advertising_cost": 4.1986,
+        "other_variable_cost": 0.55,
+        "contribution_profit": 4.00409,
+        "contribution_margin": 0.133514,
+        "break_even_acos": 0.273514
+      },
+      "first_order_cash": {
+        "order_units": 1000,
+        "purchase_order_total": 7800.0,
+        "cash_due_at_order": 2340.0,
+        "cash_due_before_shipment": 5460.0,
+        "tooling_cost": 1800.0,
+        "setup_cost": 450.0,
+        "working_capital_buffer": 2500.0,
+        "total_first_order_cash_required": 12550.0
+      }
+    },
+    {
+      "scenario_name": "higher-ad-spend",
+      "marketplace": "Amazon US",
+      "currency": "USD",
+      "per_unit": {
+        "selling_price": 29.99,
+        "realized_revenue_after_returns": 28.1906,
+        "referral_fee": 4.22859,
+        "fulfillment_fee": 4.25,
+        "landed_product_cost": 7.8,
+        "expected_return_loss": 0.48,
+        "advertising_cost": 7.4975,
+        "other_variable_cost": 0.55,
+        "contribution_profit": 3.38451,
+        "contribution_margin": 0.112855,
+        "break_even_acos": 0.362855
+      },
+      "first_order_cash": {
+        "order_units": 1000,
+        "purchase_order_total": 7800.0,
+        "cash_due_at_order": 2340.0,
+        "cash_due_before_shipment": 5460.0,
+        "tooling_cost": 1800.0,
+        "setup_cost": 450.0,
+        "working_capital_buffer": 2500.0,
+        "total_first_order_cash_required": 12550.0
+      }
+    }
+  ]
+}

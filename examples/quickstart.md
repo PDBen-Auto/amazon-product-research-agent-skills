@@ -1,41 +1,50 @@
-# Quickstart examples
+# Quickstart requests
 
-## Review-first question
-
-```text
-Use $amazon-product-research-suite for Amazon US ASIN B0XXXXXX.
-I need recurring complaints, the strongest positive drivers, and three product
-changes that can be tested. Do not claim complete review coverage.
-```
-
-Route to `amazon-review-intelligence`. Required inputs: ASIN or an authorized review export, marketplace, and collection date.
-
-## Market-first question
+## Route a cross-functional decision
 
 ```text
-Use $amazon-product-research-suite to define the direct market for a compact
-AI voice recorder on Amazon US. Separate direct products, adjacent substitutes,
-and noise before calculating revenue share.
+Use $amazon-product-research-suite to evaluate this Amazon US product.
+I need the direct market, recurring customer pain, a differentiated specification,
+supplier feasibility, unit economics, and a recommendation on whether to fund a sample.
+List missing evidence before live collection.
 ```
 
-Route to `sellersprite-bi-market-research`. Required inputs: seed keyword, competitor ASINs, SellerSprite exports, and the definition of the customer job.
+Expected result: an ordered route plan, evidence contract, artifact plan, and explicit blockers. The router should not run irrelevant modules.
 
-## Design-risk question
+## Build a testable product concept
 
 ```text
-Use $amazon-product-research-suite to pre-screen these product images for US
-design-right risk and produce three structurally distinct design-around directions.
-This is a pre-screen, not legal advice.
+Use $amazon-product-differentiation-rd. Convert these review findings and return reasons
+into no more than three product mechanisms. Give each mechanism a measurable specification,
+experiment, tradeoff, and kill criterion.
 ```
 
-Route to `design-patent-search-and-design-around`. Required inputs: product images or URL, jurisdiction, cutoff date, and non-negotiable function or cost constraints.
+Expected result: evidence-to-mechanism mapping and a test plan. Unsupported brainstorming remains labeled as a hypothesis.
 
-## Full decision question
+## Prepare supplier validation
 
 ```text
-Use $amazon-product-research-suite to plan a Go/No-Go review for this Amazon
-FBA product. Combine direct-market evidence, customer pain, design-risk notes,
-supplier quotes, target contribution margin, and first-order cash limits.
+Use $amazon-supplier-feasibility for this specification and three supplier quotes.
+Normalize currency, Incoterm, MOQ, tooling, packaging, lead time, and exclusions.
+Then define sample gates before ranking the suppliers.
 ```
 
-Route to market -> review -> design -> supplier/economics -> decision gateway. The gateway requires a sanitized evidence bundle and a configured private engine for an official result.
+Expected result: RFQ gaps, comparable quotes, risk register, and sample acceptance criteria. No supplier is described as qualified without evidence.
+
+## Calculate unit economics and cash
+
+```text
+Use $amazon-unit-economics-cashflow. Validate these current Amazon fees and supplier costs,
+calculate contribution margin and break-even ACOS, then show higher-return and higher-ad-spend
+scenarios plus the total cash needed for the first order.
+```
+
+Expected result: reconciled JSON calculations that separate per-unit profit from inventory cash and identify assumptions capable of reversing the decision.
+
+## Requests that should not trigger the suite router
+
+- "Rewrite this Amazon listing title."
+- "Create lifestyle image copy for this product."
+- "Summarize this generic spreadsheet."
+
+These are single-purpose tasks outside the cross-functional research router.

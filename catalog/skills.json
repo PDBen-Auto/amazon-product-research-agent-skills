@@ -1,21 +1,38 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "suite": "amazon-product-research-agent-skills",
+  "release": "v0.1.0",
   "skills": [
     {
       "id": "amazon-review-intelligence",
       "name": "Amazon Review Intelligence",
       "repository": "PDBen-Auto/amazon-review-intelligence-skill",
+      "ref": "92f35b952035e9e90ca9f9cb0c576fa5bdff156e",
+      "path": ".",
       "skill_name": "amazon-review-scraper",
       "url": "https://github.com/PDBen-Auto/amazon-review-intelligence-skill",
-      "install": "npx skills add PDBen-Auto/amazon-review-intelligence-skill",
+      "install": "npx skills add PDBen-Auto/amazon-review-intelligence-skill --skill amazon-review-scraper",
       "triggers": ["Amazon reviews", "VOC", "complaints", "customer pain", "review scraper"],
       "outputs": ["canonical JSON", "Excel evidence workbook", "offline HTML report"]
+    },
+    {
+      "id": "product-differentiation-rd",
+      "name": "Amazon Product Differentiation R&D",
+      "repository": "PDBen-Auto/amazon-product-research-agent-skills",
+      "ref": "v0.1.0",
+      "path": "skills/amazon-product-differentiation-rd",
+      "skill_name": "amazon-product-differentiation-rd",
+      "url": "https://github.com/PDBen-Auto/amazon-product-research-agent-skills/tree/main/skills/amazon-product-differentiation-rd",
+      "install": "npx skills add PDBen-Auto/amazon-product-research-agent-skills --skill amazon-product-differentiation-rd",
+      "triggers": ["product differentiation", "feature concept", "product specification", "validation experiment"],
+      "outputs": ["opportunity-to-mechanism map", "testable specification", "experiment plan", "kill criteria"]
     },
     {
       "id": "design-patent-search-and-design-around",
       "name": "Design Patent Search and Design-around",
       "repository": "PDBen-Auto/design-patent-design-around-skill",
+      "ref": "277233c9f301d684c3190d8674f880a45e7d8ed8",
+      "path": ".",
       "skill_name": "design-patent-search-and-design-around",
       "url": "https://github.com/PDBen-Auto/design-patent-design-around-skill",
       "install": "npx skills add PDBen-Auto/design-patent-design-around-skill --skill design-patent-search-and-design-around",
@@ -26,6 +43,8 @@
       "id": "sellersprite-bi-market-research",
       "name": "SellerSprite Amazon Market Research BI",
       "repository": "PDBen-Auto/sellersprite-amazon-market-research-bi-skill",
+      "ref": "6d6bcf08d2e15acd4f9b6ca0b043e0c1687af238",
+      "path": ".",
       "skill_name": "sellersprite-bi-market-research",
       "url": "https://github.com/PDBen-Auto/sellersprite-amazon-market-research-bi-skill",
       "install": "npx skills add PDBen-Auto/sellersprite-amazon-market-research-bi-skill --skill sellersprite-bi-market-research",
@@ -33,13 +52,39 @@
       "outputs": ["candidate manifest", "parent-ASIN summary", "coverage-gated BI HTML"]
     },
     {
+      "id": "supplier-feasibility",
+      "name": "Amazon Supplier Feasibility",
+      "repository": "PDBen-Auto/amazon-product-research-agent-skills",
+      "ref": "v0.1.0",
+      "path": "skills/amazon-supplier-feasibility",
+      "skill_name": "amazon-supplier-feasibility",
+      "url": "https://github.com/PDBen-Auto/amazon-product-research-agent-skills/tree/main/skills/amazon-supplier-feasibility",
+      "install": "npx skills add PDBen-Auto/amazon-product-research-agent-skills --skill amazon-supplier-feasibility",
+      "triggers": ["supplier feasibility", "RFQ", "MOQ", "tooling", "sample approval"],
+      "outputs": ["RFQ package", "quote normalization", "risk register", "sample acceptance gates"]
+    },
+    {
+      "id": "unit-economics-cashflow",
+      "name": "Amazon Unit Economics and Cash Flow",
+      "repository": "PDBen-Auto/amazon-product-research-agent-skills",
+      "ref": "v0.1.0",
+      "path": "skills/amazon-unit-economics-cashflow",
+      "skill_name": "amazon-unit-economics-cashflow",
+      "url": "https://github.com/PDBen-Auto/amazon-product-research-agent-skills/tree/main/skills/amazon-unit-economics-cashflow",
+      "install": "npx skills add PDBen-Auto/amazon-product-research-agent-skills --skill amazon-unit-economics-cashflow",
+      "triggers": ["unit economics", "contribution margin", "break-even ACOS", "inventory cash", "return sensitivity"],
+      "outputs": ["per-unit economics", "break-even ACOS", "scenario sensitivity", "first-order cash requirement"]
+    },
+    {
       "id": "amazon-product-decision-gateway",
       "name": "Amazon Product Decision Gateway",
       "repository": "PDBen-Auto/amazon-product-decision-suite",
+      "ref": "90fadbd8aef2191f640112f6b1834a7e2e3c691b",
+      "path": ".",
       "skill_name": "amazon-product-decision-gateway",
       "url": "https://github.com/PDBen-Auto/amazon-product-decision-suite",
       "install": "npx skills add PDBen-Auto/amazon-product-decision-suite --skill amazon-product-decision-gateway",
-      "triggers": ["product validation", "supplier feasibility", "unit economics", "Go/No-Go", "stage gate"],
+      "triggers": ["product validation", "Go/No-Go", "stage gate", "investment decision"],
       "outputs": ["sanitized evidence bundle", "validation report", "signed private-engine handoff"]
     }
   ]

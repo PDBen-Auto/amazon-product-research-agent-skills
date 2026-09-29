@@ -1,0 +1,44 @@
+{
+  "amazon-product-research-suite": {
+    "should_trigger": [
+      "Evaluate this Amazon product across market demand, review pain, suppliers, and unit economics.",
+      "I do not know which of your Amazon research skills to use for a launch decision.",
+      "Route a product validation from comparable ASINs through a prototype Go/No-Go decision."
+    ],
+    "should_not_trigger": [
+      "Rewrite this Amazon listing title.",
+      "Collect reviews for one ASIN and return the raw evidence.",
+      "Create a lifestyle image brief for this product."
+    ]
+  },
+  "amazon-product-differentiation-rd": {
+    "should_trigger": [
+      "Turn these review complaints into a measurable product specification.",
+      "Propose differentiated mechanisms and kill criteria from this VOC evidence."
+    ],
+    "should_not_trigger": [
+      "Generate ten product ideas without research.",
+      "Create final CAD for this enclosure."
+    ]
+  },
+  "amazon-supplier-feasibility": {
+    "should_trigger": [
+      "Build an RFQ and normalize these supplier quotes.",
+      "Define sample acceptance gates for this Amazon product."
+    ],
+    "should_not_trigger": [
+      "Send this supplier a purchase order.",
+      "Calculate only the Amazon referral fee."
+    ]
+  },
+  "amazon-unit-economics-cashflow": {
+    "should_trigger": [
+      "Calculate contribution margin, break-even ACOS, and first-order cash.",
+      "Show how higher returns change this Amazon product's economics."
+    ],
+    "should_not_trigger": [
+      "Forecast Amazon demand without any market data.",
+      "File my business taxes."
+    ]
+  }
+}

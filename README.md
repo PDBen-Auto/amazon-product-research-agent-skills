@@ -1,131 +1,145 @@
 # Amazon Product Research Agent Skills
 
-Research and decision skills for Amazon product teams: market scope, review intelligence, design-patent pre-screening, supplier feasibility, and Go/No-Go decisions.
+Turn Amazon market, review, product, supplier, and cost evidence into an auditable prototype or Go/No-Go decision.
 
-[![Install](https://img.shields.io/badge/install-npx%20skills%20add-111111?style=flat-square)](#install)
-[![Codex](https://img.shields.io/badge/Codex-Agent%20Skill-111111?style=flat-square)](https://developers.openai.com/codex/skills)
+[![Release](https://img.shields.io/github/v/release/PDBen-Auto/amazon-product-research-agent-skills?style=flat-square)](https://github.com/PDBen-Auto/amazon-product-research-agent-skills/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/PDBen-Auto/amazon-product-research-agent-skills/total?style=flat-square)](https://github.com/PDBen-Auto/amazon-product-research-agent-skills/releases)
+[![Validate](https://img.shields.io/github/actions/workflow/status/PDBen-Auto/amazon-product-research-agent-skills/validate.yml?branch=main&style=flat-square&label=validate)](https://github.com/PDBen-Auto/amazon-product-research-agent-skills/actions/workflows/validate.yml)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square)](https://www.python.org/)
 [![License](https://img.shields.io/badge/license-source--available-59636e?style=flat-square)](LICENSE)
 
-> One entry point for Amazon product research workflows. Pick the smallest skill that answers the question, or use the suite router when the work crosses market, customer, design, supply chain, and finance evidence.
+**Seven installable Agent Skills, one evidence contract, and one decision path.** Use a specialist for a narrow task or the suite router when a product question crosses market size, customer pain, differentiation, design risk, suppliers, economics, and stage gates.
 
-## 5-minute quick start
+[Download the latest ZIP](https://github.com/PDBen-Auto/amazon-product-research-agent-skills/releases/latest/download/amazon-product-research-agent-skills-v0.1.0.zip) · [Read in Chinese](README.zh-CN.md) · [Open the live HTML example](https://pdben-auto.github.io/amazon-product-research-agent-skills/examples/magnetic-car-phone-mount/decision-report.html)
 
-### Option A: install the router
+![Illustrative Amazon product decision report](examples/magnetic-car-phone-mount/preview.png)
+
+> The screenshot is generated from public illustrative fixtures. It demonstrates the workflow and artifact contract, not current Amazon market facts.
+
+## What problem this solves
+
+Most Amazon research workflows stop at one evidence type. Market tools show demand, review analysis shows pain, and cost sheets show margin, but a product manager still has to decide whether the same product is differentiated, manufacturable, economically viable, and ready for the next investment gate.
+
+This suite connects those jobs without hiding uncertainty:
+
+```text
+market boundary -> customer evidence -> differentiated specification
+  -> design/IP pre-screen -> supplier feasibility -> unit economics and cash
+  -> prototype or Go/No-Go decision
+```
+
+## Install in under a minute
+
+Install the cross-functional router:
 
 ```bash
 npx skills add PDBen-Auto/amazon-product-research-agent-skills --skill amazon-product-research-suite
 ```
 
-Then ask your agent:
+Then ask:
 
 ```text
-Use $amazon-product-research-suite. I am evaluating a new Amazon US product.
-Route this request to the right skills, state which evidence is missing, and
-return a short execution plan before running anything.
+Use $amazon-product-research-suite to evaluate this Amazon US product.
+Route only the work that can change the decision, list missing evidence,
+and return the artifact plan before any live collection.
 ```
 
-### Option B: install the individual skills
+The router itself requires no Amazon login, Seller Central account, API key, or private service. Individual live-data Skills may require public network access, authorized exports, or tools stated in their own documentation.
 
-```bash
-npx skills add PDBen-Auto/amazon-review-intelligence-skill
-npx skills add PDBen-Auto/design-patent-design-around-skill --skill design-patent-search-and-design-around
-npx skills add PDBen-Auto/sellersprite-amazon-market-research-bi-skill --skill sellersprite-bi-market-research
-npx skills add PDBen-Auto/amazon-product-decision-suite --skill amazon-product-decision-gateway
-```
+## Choose the smallest Skill
 
-### Option C: install the suite from a clean machine
-
-```bash
-python scripts/install_suite.py --target "$HOME/.codex/skills"
-```
-
-The installer downloads public GitHub archives, shows the exact destination, and never asks for Amazon credentials. Use `--dry-run` to inspect the plan first.
-
-## Choose the right skill
-
-| Product question | Skill | What it returns |
+| Product question | Installable Skill | Decision-ready output |
 | --- | --- | --- |
-| What are customers complaining about, and what should we change? | [Amazon Review Intelligence](https://github.com/PDBen-Auto/amazon-review-intelligence-skill) | Evidence-preserving written reviews, canonical JSON, Excel, offline HTML VOC report, product hypotheses |
-| Is a product visually close to an existing design right, and how can we redesign it? | [Design Patent Search and Design-around](https://github.com/PDBen-Auto/design-patent-design-around-skill) | Search log, official drawing review, risk split, structurally distinct redesign directions, sample gates |
-| What is the direct market, who is actually comparable, and what is the auditable revenue boundary? | [SellerSprite Market Research BI](https://github.com/PDBen-Auto/sellersprite-amazon-market-research-bi-skill) | Candidate manifest, relevance decisions, parent-ASIN deduplication, coverage gates, offline BI dashboard |
-| Should we invest, prototype, source, or stop? | [Amazon Product Decision Gateway](https://github.com/PDBen-Auto/amazon-product-decision-suite) | Evidence contract, stage-gate status, GO / CONDITIONAL_GO / NO_GO / INSUFFICIENT_EVIDENCE handoff |
+| Which products define the direct market? | [`sellersprite-bi-market-research`](https://github.com/PDBen-Auto/sellersprite-amazon-market-research-bi-skill) | Candidate manifest, relevance decisions, parent-ASIN deduplication, coverage-gated BI HTML |
+| What do customers repeatedly complain about? | [`amazon-review-scraper`](https://github.com/PDBen-Auto/amazon-review-intelligence-skill) | Written-review evidence, canonical JSON, Excel workbook, offline VOC HTML |
+| What differentiated product should we build and test? | [`amazon-product-differentiation-rd`](skills/amazon-product-differentiation-rd/SKILL.md) | Evidence-to-mechanism map, measurable specification, experiments, kill criteria |
+| Is the proposed appearance too close to an existing design right? | [`design-patent-search-and-design-around`](https://github.com/PDBen-Auto/design-patent-design-around-skill) | Search log, drawing review, risk split, structurally distinct design-around directions |
+| Can suppliers make it at the required MOQ, quality, and lead time? | [`amazon-supplier-feasibility`](skills/amazon-supplier-feasibility/SKILL.md) | RFQ, normalized quotes, manufacturing-risk register, sample gates |
+| Can it make money and how much first-order cash is required? | [`amazon-unit-economics-cashflow`](skills/amazon-unit-economics-cashflow/SKILL.md) | Contribution margin, break-even ACOS, return sensitivity, first-order cash |
+| Should the team prototype, invest, or stop? | [`amazon-product-decision-gateway`](https://github.com/PDBen-Auto/amazon-product-decision-suite) | Evidence contract, stage-gate status, formal decision handoff |
 
-## Why this suite exists
+Install any bundled specialist directly:
 
-Most product research tools stop at one evidence type. Market BI can show demand, review analysis can show pain, and patent search can show risk, but none of those facts alone answer whether a specific product is manufacturable, economically viable, and worth funding.
-
-This suite provides an explicit handoff between those jobs:
-
-```text
-market boundary -> customer evidence -> design/IP risk -> supplier feasibility
-       -> unit economics and cash -> stage-gated product decision
+```bash
+npx skills add PDBen-Auto/amazon-product-research-agent-skills --skill amazon-product-differentiation-rd
+npx skills add PDBen-Auto/amazon-product-research-agent-skills --skill amazon-supplier-feasibility
+npx skills add PDBen-Auto/amazon-product-research-agent-skills --skill amazon-unit-economics-cashflow
 ```
-
-The suite is not a replacement for a specialist tool. It is an entry point that makes the specialist tools discoverable, composable, and auditable.
 
 ## What makes it different
 
-- **Task-first routing**: start with the decision you need, not a large toolbox.
-- **Evidence contracts**: preserve source, date, scope, calculation, inference, and assumption separately.
-- **Decision-ready artifacts**: JSON, XLSX, HTML, search logs, candidate manifests, and signed handoff records can be reviewed outside the agent.
-- **Hard-stop handling**: CAPTCHA, missing data, legal uncertainty, unsupported marketplace, and critical cost gaps become explicit blockers instead of invented certainty.
-- **Public/private boundary**: public skills contain reusable workflows and validation; private engines, customer data, credentials, scoring weights, and internal thresholds stay outside the repository.
-- **Cross-platform install**: the individual repositories work with Codex and compatible Agent Skills clients; the router documents the shared contract.
+- **Decision-first routing**: narrow tasks use one specialist; cross-functional work uses only modules that can change the decision.
+- **Evidence that survives handoffs**: shared JSON contracts preserve source, date, scope, observation, calculation, inference, assumption, coverage, and confidence.
+- **R&D that can fail usefully**: customer pain becomes a mechanism, measurable specification, experiment, and predeclared kill criterion.
+- **Supplier feasibility before inventory**: RFQs normalize MOQ, tooling, quote basis, lead time, quality evidence, and sample gates instead of ranking factories by unit price alone.
+- **Profit and cash are separate**: the deterministic calculator distinguishes contribution margin from the cash required to fund the first order.
+- **Honest stopping behavior**: CAPTCHA, stale exports, missing fees, legal uncertainty, and absent supplier evidence become explicit blockers.
+- **No hidden tracking**: the installer has no telemetry, callbacks, credential collection, hidden prompts, or backdoors.
 
-## Typical workflow
+## Reproducible example
 
-1. Define the product task, marketplace, time window, and decision deadline.
-2. Route market, review, patent, and supply-chain questions to the relevant skill.
-3. Preserve raw evidence and mark whether each statement is observed, calculated, modeled, inferred, or assumed.
-4. Convert recurring customer pain into a product mechanism, specification, validation experiment, and kill criterion.
-5. Re-check design/IP collisions and supplier constraints before committing to tooling or inventory.
-6. Submit a sanitized evidence bundle to the decision gateway when a formal Go/No-Go result is required.
+The magnetic car phone mount fixture includes:
+
+- a scoped product brief;
+- a validated cross-Skill route plan;
+- a source-indexed evidence bundle;
+- base and downside unit-economics scenarios;
+- a self-contained offline HTML decision report;
+- hard gates for supplier quotes and design-patent pre-screening.
+
+Reproduce it with Python 3.10+ and no third-party packages:
+
+```bash
+python scripts/validate_artifact.py route-plan examples/magnetic-car-phone-mount/route-plan.json
+python scripts/validate_artifact.py evidence-bundle examples/magnetic-car-phone-mount/evidence-bundle.json
+python skills/amazon-unit-economics-cashflow/scripts/unit_economics.py \
+  examples/magnetic-car-phone-mount/input/unit-economics-assumptions.json \
+  --output examples/magnetic-car-phone-mount/unit-economics.json --pretty
+```
+
+## Pinned suite installer
+
+The optional Python installer downloads exact catalog references rather than moving `main` branches. Existing local Skill directories are preserved unless `--force` is explicitly supplied.
+
+```bash
+python scripts/install_suite.py --list
+python scripts/install_suite.py --dry-run
+python scripts/install_suite.py --skill unit-economics-cashflow
+python scripts/install_suite.py --check
+```
 
 ## Inputs and outputs
 
-The router accepts a plain-language product question plus any available product URLs, ASINs, images, review exports, SellerSprite files, patent identifiers, supplier quotes, cost assumptions, and business constraints. It reports missing or conflicting inputs before execution.
+The router accepts a product decision plus available ASINs, URLs, images, exports, patent identifiers, quotes, cost assumptions, marketplace, jurisdiction, and authorization limits. It reports missing or conflicting inputs before execution.
 
-The selected skill returns one or more of the following:
+Cross-Skill work uses:
 
-- a source-indexed evidence table;
-- a normalized data file or manifest;
-- an offline HTML or Excel report;
-- product requirements and validation experiments;
-- supplier questions and sample acceptance gates;
-- a signed or hash-bound decision handoff.
+- [`schemas/route-plan.schema.json`](schemas/route-plan.schema.json) for routing, blockers, order, and expected artifacts;
+- [`schemas/evidence-bundle.schema.json`](schemas/evidence-bundle.schema.json) for source-indexed claims and assumptions;
+- `scripts/validate_artifact.py` for zero-dependency structural checks.
 
-No skill in this suite claims to provide legal advice, Amazon settlement data, certification approval, or a guaranteed market outcome.
+No Skill in this suite claims to provide legal advice, certification approval, Amazon settlement data, guaranteed supplier performance, or a guaranteed market result.
 
 ## Supported clients
 
-The package follows the common Agent Skills layout (`SKILL.md`, optional `agents/openai.yaml`, scripts, and references). It is designed for Codex and compatible clients that discover `SKILL.md` directories. The exact install command may differ by client; the individual repositories document Codex, Claude Code, Cursor, Gemini CLI, GitHub Copilot, Cline, OpenCode, and `skills.sh` paths where supported.
+The repository follows the common Agent Skills layout: `SKILL.md`, optional `agents/openai.yaml`, scripts, references, and assets. It is designed for Codex and compatible clients that discover Skill directories. Installation behavior varies by client; `npx skills add` is the shortest supported discovery path for this repository.
 
-## Repository map
+## Validation
 
-```text
-amazon-product-research-agent-skills/
-├── SKILL.md                         # suite router skill
-├── agents/openai.yaml               # Codex display metadata
-├── catalog/skills.json              # machine-readable catalog
-├── scripts/install_suite.py         # explicit public-archive installer
-├── scripts/validate_catalog.py      # deterministic catalog check
-├── examples/quickstart.md           # smallest useful request examples
-└── docs/distribution-playbook.md    # discoverability and release guidance
+```bash
+python scripts/validate_catalog.py
+python -m unittest discover -s tests -v
+python -m compileall -q scripts skills
 ```
 
-## Security and privacy
+GitHub Actions runs the same catalog, artifact, installer, test, and compile checks on every push and pull request.
 
-The installer has no telemetry and does not add hidden tracking, backdoors, prompt-obfuscation logic, or credential collection. Do not commit Amazon cookies, SellerSprite exports containing private data, supplier contacts, customer reviews, private engine URLs, API tokens, or signing keys.
+## Security, privacy, and licensing
+
+Do not commit Amazon cookies, private exports, supplier contacts, customer data, API tokens, signing keys, or private engine URLs. The public suite contains reusable workflows, schemas, examples, and deterministic calculations; private scoring weights and proprietary thresholds remain outside the repository.
+
+This catalog is source-available. Each linked specialist repository defines its own license and public/private boundary. Review [LICENSE](LICENSE) before redistribution or commercial embedding.
 
 ## Search terms
 
-Amazon product research, Amazon FBA product validation, Amazon review scraper, Amazon VOC, Amazon market research, SellerSprite BI, design patent search, design-around, product opportunity analysis, supplier feasibility, unit economics, Go/No-Go decision, product manager agent skill, ecommerce research automation, Agent Skills.
-
-## Contributing
-
-Start with a reproducible fixture, state the source and date, show the expected artifact, and include a failure case. Read the contributing and licensing policy in each individual repository before opening a change.
-
-## License
-
-This catalog is source-available. Each linked skill repository defines its own license and public/private boundary.
+Amazon product research, Amazon FBA product validation, Amazon review scraper, Amazon VOC, SellerSprite BI, design patent search, design-around, product differentiation, supplier RFQ, unit economics, break-even ACOS, inventory cash flow, Go/No-Go decision, ecommerce Agent Skills, Codex Skill.

@@ -1,7 +1,7 @@
 interface:
   display_name: "Amazon Product Research Suite"
-  short_description: "Route Amazon research to the right product skill"
-  default_prompt: "Use $amazon-product-research-suite to route this Amazon product question, list missing evidence, and propose the smallest execution plan."
+  short_description: "Route cross-functional Amazon product decisions"
+  default_prompt: "Use $amazon-product-research-suite to route this cross-functional Amazon product question, identify missing evidence, and produce the smallest executable plan."
 
 policy:
   allow_implicit_invocation: true

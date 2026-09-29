@@ -1,0 +1,7 @@
+interface:
+  display_name: "Amazon Product Differentiation R&D"
+  short_description: "Turn customer evidence into testable product specs"
+  default_prompt: "Use $amazon-product-differentiation-rd to convert this evidence into differentiated mechanisms, measurable specifications, experiments, and kill criteria."
+
+policy:
+  allow_implicit_invocation: true

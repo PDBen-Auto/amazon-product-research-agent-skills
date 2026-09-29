@@ -1,0 +1,7 @@
+interface:
+  display_name: "Amazon Unit Economics and Cash Flow"
+  short_description: "Model margin, break-even ACOS, and inventory cash"
+  default_prompt: "Use $amazon-unit-economics-cashflow to validate these assumptions, calculate unit economics and first-order cash, and show downside scenarios without inventing missing fees."
+
+policy:
+  allow_implicit_invocation: true

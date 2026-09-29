@@ -1,0 +1,22 @@
+{
+  "scenario_name": "illustrative-base",
+  "marketplace": "Amazon US",
+  "currency": "USD",
+  "selling_price": 29.99,
+  "referral_fee_rate": 0.15,
+  "fulfillment_fee": 4.25,
+  "landed_product_cost": 7.8,
+  "return_rate": 0.06,
+  "return_loss_per_return": 8.0,
+  "advertising_acos": 0.14,
+  "other_variable_cost": 0.55,
+  "order_units": 1000,
+  "tooling_cost": 1800.0,
+  "setup_cost": 450.0,
+  "deposit_rate": 0.3,
+  "working_capital_buffer": 2500.0,
+  "scenarios": [
+    {"name": "higher-returns", "overrides": {"return_rate": 0.14}},
+    {"name": "higher-ad-spend", "overrides": {"advertising_acos": 0.25}}
+  ]
+}

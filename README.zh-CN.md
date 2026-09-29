@@ -1,61 +1,99 @@
-# Amazon 产品研究 Agent Skills 套件
+# Amazon 产品研究 Agent Skills
 
-面向 Amazon 产品团队的一站式 Skill 入口：市场边界、评论洞察、外观专利预筛、供应链可行性和 Go/No-Go 立项决策。
+把 Amazon 市场、评论、产品、供应商和成本证据，转成可审计的打样或 Go/No-Go 决策。
 
-## 5 分钟开始
+[![Release](https://img.shields.io/github/v/release/PDBen-Auto/amazon-product-research-agent-skills?style=flat-square)](https://github.com/PDBen-Auto/amazon-product-research-agent-skills/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/PDBen-Auto/amazon-product-research-agent-skills/total?style=flat-square)](https://github.com/PDBen-Auto/amazon-product-research-agent-skills/releases)
+[![Validate](https://img.shields.io/github/actions/workflow/status/PDBen-Auto/amazon-product-research-agent-skills/validate.yml?branch=main&style=flat-square&label=validate)](https://github.com/PDBen-Auto/amazon-product-research-agent-skills/actions/workflows/validate.yml)
 
-安装统一路由 Skill：
+**7 个可独立安装的 Skill、统一证据契约和一条完整决策链。** 单一问题使用专业 Skill；当问题跨越市场、用户、研发、外观风险、供应链、财务和阶段门时，使用统一路由器。
+
+[下载最新 ZIP](https://github.com/PDBen-Auto/amazon-product-research-agent-skills/releases/latest/download/amazon-product-research-agent-skills-v0.1.0.zip) · [在线查看完整 HTML 案例](https://pdben-auto.github.io/amazon-product-research-agent-skills/examples/magnetic-car-phone-mount/decision-report.html) · [English](README.md)
+
+![Amazon 产品决策案例预览](examples/magnetic-car-phone-mount/preview.png)
+
+> 图片来自公开演示数据，用于展示工作流和输出契约，不代表实时 Amazon 市场结论。
+
+## 解决什么问题
+
+大多数工具只能回答其中一段：市场工具说明需求，评论分析说明痛点，成本表说明毛利。但产品经理最终需要判断的是：同一个产品是否有明确差异、是否可生产、是否赚钱，以及是否值得进入下一阶段。
+
+```text
+市场边界 -> 用户证据 -> 差异化规格 -> 设计/IP 预筛
+  -> 供应链可行性 -> 单位经济与现金 -> 打样或 Go/No-Go
+```
+
+## 一分钟安装
+
+安装跨模块路由器：
 
 ```bash
 npx skills add PDBen-Auto/amazon-product-research-agent-skills --skill amazon-product-research-suite
 ```
 
-然后告诉 Agent：
+然后输入：
 
 ```text
-使用 $amazon-product-research-suite。我正在评估一个 Amazon US 新产品。
-请先把问题路由到合适的 Skill，列出缺失证据，再给出执行计划。
+使用 $amazon-product-research-suite 评估这个 Amazon US 产品。
+只路由会影响决策的工作，先列出缺失证据和输出计划，
+不要在没有授权时进行实时采集。
 ```
 
-也可以直接安装单项 Skill：
+路由器本身不需要 Amazon 登录、Seller Central 账号、API Key 或私有服务。专业 Skill 进行实时采集时，可能需要公开网络、用户授权的导出文件或其文档中明确说明的工具。
+
+## 7 个 Skill
+
+| 产品问题 | Skill | 输出 |
+| --- | --- | --- |
+| 真实直接市场由哪些产品组成？ | `sellersprite-bi-market-research` | 候选清单、相关性判断、父 ASIN 去重、覆盖闸门、BI HTML |
+| 用户反复抱怨什么？ | `amazon-review-scraper` | 评论原文证据、JSON、Excel、离线 VOC HTML |
+| 应该做什么差异化产品？ | `amazon-product-differentiation-rd` | 证据到机制映射、可测规格、实验、淘汰标准 |
+| 外观是否接近已有设计权？ | `design-patent-search-and-design-around` | 搜索日志、图纸分析、风险拆分、结构性规避方向 |
+| 供应商能否按 MOQ、质量和交期生产？ | `amazon-supplier-feasibility` | RFQ、报价归一化、制造风险、样品验收门槛 |
+| 产品能否赚钱，首单需要多少现金？ | `amazon-unit-economics-cashflow` | 贡献毛利、盈亏平衡 ACOS、退货敏感性、首单现金 |
+| 应该打样、投入还是停止？ | `amazon-product-decision-gateway` | 证据契约、阶段门状态、正式决策交接 |
+
+三个新模块可以单独安装：
 
 ```bash
-npx skills add PDBen-Auto/amazon-review-intelligence-skill
-npx skills add PDBen-Auto/design-patent-design-around-skill --skill design-patent-search-and-design-around
-npx skills add PDBen-Auto/sellersprite-amazon-market-research-bi-skill --skill sellersprite-bi-market-research
-npx skills add PDBen-Auto/amazon-product-decision-suite --skill amazon-product-decision-gateway
+npx skills add PDBen-Auto/amazon-product-research-agent-skills --skill amazon-product-differentiation-rd
+npx skills add PDBen-Auto/amazon-product-research-agent-skills --skill amazon-supplier-feasibility
+npx skills add PDBen-Auto/amazon-product-research-agent-skills --skill amazon-unit-economics-cashflow
 ```
 
-## 如何选择
+## 核心优势
 
-| 你要回答的问题 | 使用 Skill | 得到的结果 |
-| --- | --- | --- |
-| 用户到底在抱怨什么，产品该改什么？ | [Amazon Review Intelligence](https://github.com/PDBen-Auto/amazon-review-intelligence-skill) | 保留原文证据的评论数据、Excel、JSON、离线 HTML VOC 报告和产品假设 |
-| 产品是否接近已有外观设计权，如何改款？ | [Design Patent Search and Design-around](https://github.com/PDBen-Auto/design-patent-design-around-skill) | 搜索日志、官方图纸分析、风险拆分、结构性设计规避方案和打样门槛 |
-| 真实直接市场有多大，哪些 ASIN 可以进入分母？ | [SellerSprite Market Research BI](https://github.com/PDBen-Auto/sellersprite-amazon-market-research-bi-skill) | 候选清单、相关性判断、父 ASIN 去重、覆盖闸门和离线 BI 仪表板 |
-| 该不该投入、打样、询盘，还是停止？ | [Amazon Product Decision Gateway](https://github.com/PDBen-Auto/amazon-product-decision-suite) | 证据契约、阶段门状态、GO / CONDITIONAL_GO / NO_GO / INSUFFICIENT_EVIDENCE 交接 |
+- **从决策开始**：单一问题只用一个专业 Skill，跨模块问题才使用路由器。
+- **证据可以跨 Skill 交接**：保留来源、日期、范围、观察、计算、推断、假设、覆盖率和置信度。
+- **差异化能够验证和淘汰**：痛点会转成产品机制、量化规格、实验和预先声明的失败标准。
+- **下单前验证供应链**：统一 MOQ、模具、报价口径、交期、质量证据和样品门槛，而不是只比较单价。
+- **利润和现金分开计算**：确定性计算器区分单件贡献毛利与首单资金需求。
+- **遇到缺证据就停止**：验证码、过期数据、费用缺失、法律不确定性和供应商证据不足都会变成显式阻断。
+- **没有隐藏追踪**：安装器不包含遥测、回调、凭证收集、隐藏提示词或后门。
 
-## 解决什么问题
+## 可复现案例
 
-市场 BI 能说明需求，评论分析能说明痛点，专利搜索能提示风险，但它们单独都不能证明产品可生产、能赚钱、适合当前团队投入。本套件把这些任务组织成一条可复核的决策链：
+磁吸车载手机支架案例包含产品简报、跨 Skill 路由、证据包、基础与下行情景单位经济，以及无需服务器即可打开的 HTML 决策报告。结论为 `CONDITIONAL_GO_FOR_SAMPLE`：只有在确认当前费用、供应商报价和外观专利预筛后，才进入下一阶段。
 
-```text
-市场边界 -> 用户证据 -> 设计/IP 风险 -> 供应链可行性 -> 单位经济与现金 -> 阶段门决策
+```bash
+python scripts/validate_artifact.py route-plan examples/magnetic-car-phone-mount/route-plan.json
+python scripts/validate_artifact.py evidence-bundle examples/magnetic-car-phone-mount/evidence-bundle.json
+python -m unittest discover -s tests -v
 ```
 
-它不是替代所有专业 Skill，而是提供一个能被搜索、能被安装、能被路由和能被复盘的统一入口。
+## 固定版本安装器
 
-## 核心差异
+可选 Python 安装器下载目录中固定的 Commit 或 Release，而不是随时变化的 `main`。已有本地 Skill 默认不会被覆盖，只有显式使用 `--force` 才会替换。
 
-- 按产品问题路由，不要求用户先理解工具目录；
-- 明确区分事实、计算、模型、推断和假设；
-- 输出 JSON、XLSX、HTML、搜索日志、候选清单和签名交接包；
-- CAPTCHA、缺失数据、法律不确定性和关键成本缺口会成为显式阻断；
-- 公开仓库不包含私有 Engine、客户数据、凭证、内部阈值和签名私钥；
-- 单项仓库可独立安装，也可以作为套件的一部分使用。
+```bash
+python scripts/install_suite.py --list
+python scripts/install_suite.py --dry-run
+python scripts/install_suite.py --skill unit-economics-cashflow
+python scripts/install_suite.py --check
+```
 
-## 安全与隐私
+## 安全与边界
 
-安装脚本没有遥测、隐藏追踪、后门、提示词混淆或凭证收集逻辑。不要把 Amazon Cookie、SellerSprite 私有导出、供应商联系人、客户评论、API Token 或签名私钥提交到公开仓库。
+不要提交 Amazon Cookie、私有导出、供应商联系人、客户数据、API Token、签名私钥或私有 Engine 地址。公开仓库只包含可复用工作流、Schema、演示数据和确定性计算；内部评分权重和专有阈值不公开。
 
-更多输入、输出、依赖和边界见 [SKILL.md](SKILL.md) 与各子仓库文档。
+本套件不提供法律意见、认证批准、Amazon 结算数据、供应商履约保证或市场结果保证。仓库采用 source-available 许可，重新分发或商业嵌入前请阅读 [LICENSE](LICENSE)。

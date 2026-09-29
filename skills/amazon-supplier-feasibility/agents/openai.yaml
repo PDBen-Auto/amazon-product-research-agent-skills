@@ -1,0 +1,7 @@
+interface:
+  display_name: "Amazon Supplier Feasibility"
+  short_description: "Build RFQs, compare quotes, and gate samples"
+  default_prompt: "Use $amazon-supplier-feasibility to turn this product specification into an RFQ, normalize supplier quotes, identify manufacturing risks, and define sample gates."
+
+policy:
+  allow_implicit_invocation: true

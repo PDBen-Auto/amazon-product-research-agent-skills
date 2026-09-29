@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0",
+  "request_id": "demo-magnetic-mount-001",
+  "decision": "Decide whether to fund a supplier sample and validation round",
+  "scope": {
+    "marketplace": "Amazon US",
+    "jurisdiction": "United States",
+    "as_of": "2026-09-29"
+  },
+  "selected_skills": [
+    {
+      "skill_name": "sellersprite-bi-market-research",
+      "reason": "Define the direct market and comparable products",
+      "status": "complete",
+      "required_inputs": ["seed terms", "candidate ASIN fixture"]
+    },
+    {
+      "skill_name": "amazon-review-scraper",
+      "reason": "Identify recurring pain and positive purchase drivers",
+      "status": "complete",
+      "required_inputs": ["review fixture", "marketplace"]
+    },
+    {
+      "skill_name": "amazon-product-differentiation-rd",
+      "reason": "Translate evidence into a testable product concept",
+      "status": "complete",
+      "required_inputs": ["evidence bundle", "business constraints"]
+    },
+    {
+      "skill_name": "amazon-supplier-feasibility",
+      "reason": "Prepare RFQ fields and sample gates",
+      "status": "complete",
+      "required_inputs": ["product specification", "volume assumptions"]
+    },
+    {
+      "skill_name": "amazon-unit-economics-cashflow",
+      "reason": "Test margin, break-even ACOS, and first-order cash",
+      "status": "complete",
+      "required_inputs": ["illustrative fee and cost assumptions"]
+    },
+    {
+      "skill_name": "amazon-product-decision-gateway",
+      "reason": "Apply a stage-gated decision to the sanitized fixture",
+      "status": "complete",
+      "required_inputs": ["validated evidence bundle", "open blockers"]
+    }
+  ],
+  "execution_order": [
+    "sellersprite-bi-market-research",
+    "amazon-review-scraper",
+    "amazon-product-differentiation-rd",
+    "amazon-supplier-feasibility",
+    "amazon-unit-economics-cashflow",
+    "amazon-product-decision-gateway"
+  ],
+  "missing_inputs": [
+    {
+      "name": "live supplier quotation",
+      "severity": "blocker",
+      "next_action": "Send the RFQ to qualified suppliers and normalize returned quotes"
+    },
+    {
+      "name": "design-patent pre-screen of selected geometry",
+      "severity": "blocker",
+      "next_action": "Run the design-patent Skill after the first design images exist"
+    }
+  ],
+  "artifacts": [
+    {"type": "json", "path": "evidence-bundle.json", "producer": "suite"},
+    {"type": "json", "path": "unit-economics.json", "producer": "amazon-unit-economics-cashflow"},
+    {"type": "html", "path": "decision-report.html", "producer": "suite"}
+  ],
+  "boundaries": [
+    "Illustrative fixture, not current Amazon market data",
+    "Not legal advice or supplier qualification",
+    "No purchase order or external message was sent"
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "bundle_id": "demo-magnetic-mount-evidence-001",
+  "product": {
+    "name": "Magnetic car phone mount",
+    "case_type": "illustrative-fixture"
+  },
+  "scope": {
+    "marketplace": "Amazon US",
+    "as_of": "2026-09-29"
+  },
+  "evidence": [
+    {
+      "evidence_id": "E-MKT-01",
+      "claim": "The fixture contains 24 direct-comparison product records after relevance filtering.",
+      "kind": "observed",
+      "source": {"type": "public-fixture", "locator": "fixture/market-candidates.json", "accessed_at": "2026-09-29"},
+      "confidence": 1.0,
+      "coverage": 0.8
+    },
+    {
+      "evidence_id": "E-VOC-01",
+      "claim": "Retention loss on rough roads is the highest-severity recurring pain in the illustrative review sample.",
+      "kind": "modeled",
+      "source": {"type": "synthetic-review-fixture", "locator": "fixture/reviews.json", "accessed_at": "2026-09-29"},
+      "confidence": 0.72,
+      "coverage": 0.65
+    },
+    {
+      "evidence_id": "E-VOC-02",
+      "claim": "One-handed release is a secondary opportunity with a measurable usability test.",
+      "kind": "inferred",
+      "source": {"type": "synthetic-review-fixture", "locator": "fixture/reviews.json", "accessed_at": "2026-09-29"},
+      "confidence": 0.68,
+      "coverage": 0.65
+    },
+    {
+      "evidence_id": "E-RD-01",
+      "claim": "A dual-retention concept should be tested for vibration stability and one-handed release force.",
+      "kind": "inferred",
+      "source": {"type": "skill-output", "locator": "amazon-product-differentiation-rd", "accessed_at": "2026-09-29"},
+      "confidence": 0.63,
+      "coverage": null
+    },
+    {
+      "evidence_id": "E-SUP-01",
+      "claim": "Magnet grade, joint torque, adhesive system, coating, and tooling ownership are critical RFQ fields.",
+      "kind": "inferred",
+      "source": {"type": "skill-output", "locator": "amazon-supplier-feasibility", "accessed_at": "2026-09-29"},
+      "confidence": 0.7,
+      "coverage": null
+    },
+    {
+      "evidence_id": "E-FIN-01",
+      "claim": "Under illustrative base assumptions, contribution margin remains above the 18% fixture hurdle.",
+      "kind": "calculated",
+      "source": {"type": "calculator", "locator": "unit-economics.json", "accessed_at": "2026-09-29"},
+      "confidence": 0.75,
+      "coverage": null
+    }
+  ],
+  "assumptions": [
+    "All market and review records are synthetic public fixtures.",
+    "Amazon fees and supplier costs are illustrative and must be replaced with current sourced values.",
+    "Demand, return, and advertising rates are planning assumptions rather than forecasts."
+  ],
+  "blockers": [
+    "No live supplier quote or production sample.",
+    "No design-patent pre-screen for a selected geometry.",
+    "No current marketplace fee verification."
+  ]
+}

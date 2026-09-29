@@ -1,0 +1,31 @@
+name: Validate Skill Suite
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Validate catalog
+        run: python scripts/validate_catalog.py
+      - name: Validate example artifacts
+        run: |
+          python scripts/validate_artifact.py route-plan examples/magnetic-car-phone-mount/route-plan.json
+          python scripts/validate_artifact.py evidence-bundle examples/magnetic-car-phone-mount/evidence-bundle.json
+      - name: Check installer plan
+        run: python scripts/install_suite.py --dry-run --target /tmp/skills-do-not-create
+      - name: Run tests
+        run: python -m unittest discover -s tests -v
+      - name: Compile Python
+        run: python -m compileall -q scripts skills

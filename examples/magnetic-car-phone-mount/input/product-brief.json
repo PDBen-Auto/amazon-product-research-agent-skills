@@ -1,0 +1,16 @@
+{
+  "case_type": "illustrative-fixture",
+  "product": "Magnetic car phone mount",
+  "marketplace": "Amazon US",
+  "decision": "Decide whether to fund a supplier sample and validation round",
+  "target_selling_price": 29.99,
+  "currency": "USD",
+  "target_user": "Drivers who need stable one-handed phone mounting on rough roads",
+  "constraints": {
+    "first_order_units": 1000,
+    "first_order_cash_limit": 15000,
+    "target_contribution_margin": 0.18,
+    "tooling_budget": 2500
+  },
+  "notice": "All values in this public case are illustrative and are not live Amazon market facts or supplier quotations."
+}

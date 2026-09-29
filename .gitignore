@@ -2,3 +2,6 @@ tmp-skills/
 tmp-skills-live/
 __pycache__/
 *.pyc
+.playwright-cli/
+release/
+.validator-deps*/
