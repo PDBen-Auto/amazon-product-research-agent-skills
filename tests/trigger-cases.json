@@ -14,7 +14,8 @@
   "amazon-product-differentiation-rd": {
     "should_trigger": [
       "Turn these review complaints into a measurable product specification.",
-      "Propose differentiated mechanisms and kill criteria from this VOC evidence."
+      "Propose differentiated mechanisms and kill criteria from this VOC evidence.",
+      "What physical product changes should we test to solve the recurring customer pain in these reviews?"
     ],
     "should_not_trigger": [
       "Generate ten product ideas without research.",
@@ -24,7 +25,8 @@
   "amazon-supplier-feasibility": {
     "should_trigger": [
       "Build an RFQ and normalize these supplier quotes.",
-      "Define sample acceptance gates for this Amazon product."
+      "Define sample acceptance gates for this Amazon product.",
+      "Can this concept be manufactured at the stated MOQ, tooling budget, and lead time?"
     ],
     "should_not_trigger": [
       "Send this supplier a purchase order.",
@@ -34,7 +36,8 @@
   "amazon-unit-economics-cashflow": {
     "should_trigger": [
       "Calculate contribution margin, break-even ACOS, and first-order cash.",
-      "Show how higher returns change this Amazon product's economics."
+      "Show how higher returns change this Amazon product's economics.",
+      "How much cash do I need for the first order, and does the downside case still make money?"
     ],
     "should_not_trigger": [
       "Forecast Amazon demand without any market data.",

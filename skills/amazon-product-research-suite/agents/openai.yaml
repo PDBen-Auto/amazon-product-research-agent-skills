@@ -1,6 +1,6 @@
 interface:
   display_name: "Amazon Product Research Suite"
-  short_description: "Route cross-functional Amazon product decisions"
+  short_description: "Route cross-functional Amazon product research"
   default_prompt: "Use $amazon-product-research-suite to route this cross-functional Amazon product question, identify missing evidence, and produce the smallest executable plan."
 
 policy:

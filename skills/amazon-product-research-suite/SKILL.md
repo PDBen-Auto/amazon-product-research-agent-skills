@@ -13,12 +13,12 @@ For a narrow request, route directly to the specialist and do not run the suite 
 
 ## Implementation Basis and Dependencies
 
-The router uses the Agent Skills directory contract, the machine-readable catalog in `catalog/skills.json`, and the shared artifact schemas in `schemas/`. It sequences public specialist workflows without copying private scoring logic into this package.
+The router uses the Agent Skills directory contract, the routing table below, and the bundled artifact schemas in `references/`. It sequences public specialist workflows without copying private scoring logic into this package.
 
 | Dependency | Required | Provider and validation | Fallback or stop behavior |
 | --- | --- | --- | --- |
 | Compatible Agent Skills runtime | Yes | Host runtime; confirm it can load this `SKILL.md` | Return a manual routing plan |
-| One or more catalog Skills | Conditional | Local installation or public repository listed in the catalog | Give the exact pinned install command; do not claim execution |
+| One or more specialist Skills | Conditional | Local installation or the public repositories named below | Give the exact install command; do not claim execution |
 | Product evidence | Conditional | User-authorized files, URLs, exports, images, quotes, or assumptions | Return an evidence-gap plan |
 | Network access | Conditional | Required only for live public-source collection or installation | Work from supplied evidence or stop the live step |
 | Python 3.10+ | Optional | Runs the zero-third-party-dependency installer and validators | Install manually and inspect JSON artifacts manually |
@@ -43,9 +43,9 @@ If inputs are stale, conflicting, sensitive, or incomplete, report the smallest 
 
 Every run returns:
 
-1. `route-plan.json` or an equivalent structured routing record conforming to `schemas/route-plan.schema.json`.
+1. `route-plan.json` or an equivalent structured routing record conforming to `references/route-plan.schema.json`.
 2. Selected Skill names, reasons, pinned install commands when missing, and the smallest execution order.
-3. An evidence contract conforming to `schemas/evidence-bundle.schema.json` for cross-Skill handoffs.
+3. An evidence contract conforming to `references/evidence-bundle.schema.json` for cross-Skill handoffs.
 4. Missing inputs separated into blockers and optional quality gaps.
 5. Expected artifact destinations such as JSON, CSV, XLSX, HTML, search logs, or decision handoffs.
 6. Explicit boundaries and partial-result status.
@@ -54,27 +54,27 @@ Success means the user can identify what runs, what evidence it needs, what arti
 
 ## Routing rules
 
-| User intent | Specialist Skill |
-| --- | --- |
-| Reviews, complaints, VOC, recurring pain, review collection | `amazon-review-scraper` |
-| Convert evidence into differentiated mechanisms, specifications, experiments, and kill criteria | `amazon-product-differentiation-rd` |
-| Visual similarity, design rights, design patent, design-around | `design-patent-search-and-design-around` |
-| Amazon category sizing, keyword expansion, ASIN discovery, SellerSprite, market boundary | `sellersprite-bi-market-research` |
-| RFQ, MOQ, tooling, lead time, supplier comparison, sample gates | `amazon-supplier-feasibility` |
-| Contribution margin, break-even ACOS, returns sensitivity, inventory cash | `amazon-unit-economics-cashflow` |
-| Stage gate or formal Go/No-Go handoff | `amazon-product-decision-gateway` |
+| User intent | Specialist Skill | Install command when missing |
+| --- | --- | --- |
+| Reviews, complaints, VOC, recurring pain, review collection | `amazon-review-scraper` | `npx skills add PDBen-Auto/amazon-review-intelligence-skill --skill amazon-review-scraper` |
+| Convert evidence into differentiated mechanisms, specifications, experiments, and kill criteria | `amazon-product-differentiation-rd` | `npx skills add PDBen-Auto/amazon-product-research-agent-skills --skill amazon-product-differentiation-rd` |
+| Visual similarity, design rights, design patent, design-around | `design-patent-search-and-design-around` | `npx skills add PDBen-Auto/design-patent-design-around-skill --skill design-patent-search-and-design-around` |
+| Amazon category sizing, keyword expansion, ASIN discovery, SellerSprite, market boundary | `sellersprite-bi-market-research` | `npx skills add PDBen-Auto/sellersprite-amazon-market-research-bi-skill --skill sellersprite-bi-market-research` |
+| RFQ, MOQ, tooling, lead time, supplier comparison, sample gates | `amazon-supplier-feasibility` | `npx skills add PDBen-Auto/amazon-product-research-agent-skills --skill amazon-supplier-feasibility` |
+| Contribution margin, break-even ACOS, returns sensitivity, inventory cash | `amazon-unit-economics-cashflow` | `npx skills add PDBen-Auto/amazon-product-research-agent-skills --skill amazon-unit-economics-cashflow` |
+| Stage gate or formal Go/No-Go handoff | `amazon-product-decision-gateway` | `npx skills add PDBen-Auto/amazon-product-decision-suite --skill amazon-product-decision-gateway` |
 
 For a cross-functional launch decision, normally sequence market -> customer evidence -> differentiation -> design/IP -> supplier -> unit economics -> decision gateway. Skip any module that cannot change the decision.
 
 ## Workflow
 
 1. Restate the decision, marketplace, time window, and deadline in one sentence.
-2. Select the smallest set of relevant Skills from `catalog/skills.json`.
+2. Select the smallest set of relevant Skills from the routing table above.
 3. Check installation and required inputs before promising execution.
 4. Create the route plan and evidence contract.
 5. Run specialist Skills only when their data access and external actions are authorized.
 6. Preserve source meaning and label each claim as observed, calculated, modeled, inferred, or assumed.
-7. Validate cross-Skill JSON with `scripts/validate_artifact.py` when those artifacts are produced.
+7. Validate cross-Skill JSON against the bundled schemas when those artifacts are produced. In the repository checkout, `scripts/validate_artifact.py` provides a zero-dependency validator.
 8. Stop at a hard blocker, preserve partial results, and state the recovery action.
 9. Verify every promised artifact exists before reporting completion.
 

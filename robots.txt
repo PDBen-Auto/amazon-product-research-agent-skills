@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pdben-auto.github.io/amazon-product-research-agent-skills/sitemap.xml

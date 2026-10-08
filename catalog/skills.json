@@ -1,7 +1,7 @@
 {
   "schema_version": "1.1",
   "suite": "amazon-product-research-agent-skills",
-  "release": "v0.1.0",
+  "release": "v0.1.1",
   "skills": [
     {
       "id": "amazon-review-intelligence",
@@ -19,7 +19,7 @@
       "id": "product-differentiation-rd",
       "name": "Amazon Product Differentiation R&D",
       "repository": "PDBen-Auto/amazon-product-research-agent-skills",
-      "ref": "v0.1.0",
+      "ref": "v0.1.1",
       "path": "skills/amazon-product-differentiation-rd",
       "skill_name": "amazon-product-differentiation-rd",
       "url": "https://github.com/PDBen-Auto/amazon-product-research-agent-skills/tree/main/skills/amazon-product-differentiation-rd",
@@ -55,7 +55,7 @@
       "id": "supplier-feasibility",
       "name": "Amazon Supplier Feasibility",
       "repository": "PDBen-Auto/amazon-product-research-agent-skills",
-      "ref": "v0.1.0",
+      "ref": "v0.1.1",
       "path": "skills/amazon-supplier-feasibility",
       "skill_name": "amazon-supplier-feasibility",
       "url": "https://github.com/PDBen-Auto/amazon-product-research-agent-skills/tree/main/skills/amazon-supplier-feasibility",
@@ -67,7 +67,7 @@
       "id": "unit-economics-cashflow",
       "name": "Amazon Unit Economics and Cash Flow",
       "repository": "PDBen-Auto/amazon-product-research-agent-skills",
-      "ref": "v0.1.0",
+      "ref": "v0.1.1",
       "path": "skills/amazon-unit-economics-cashflow",
       "skill_name": "amazon-unit-economics-cashflow",
       "url": "https://github.com/PDBen-Auto/amazon-product-research-agent-skills/tree/main/skills/amazon-unit-economics-cashflow",

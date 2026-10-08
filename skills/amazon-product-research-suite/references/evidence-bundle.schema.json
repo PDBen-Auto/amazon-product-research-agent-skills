@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/PDBen-Auto/amazon-product-research-agent-skills/schemas/evidence-bundle.schema.json",
+  "$id": "https://github.com/PDBen-Auto/amazon-product-research-agent-skills/blob/main/skills/amazon-product-research-suite/references/evidence-bundle.schema.json",
   "title": "Amazon Product Research Evidence Bundle",
   "type": "object",
   "required": ["schema_version", "bundle_id", "product", "scope", "evidence", "assumptions", "blockers"],

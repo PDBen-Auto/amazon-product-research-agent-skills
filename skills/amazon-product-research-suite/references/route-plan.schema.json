@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/PDBen-Auto/amazon-product-research-agent-skills/schemas/route-plan.schema.json",
+  "$id": "https://github.com/PDBen-Auto/amazon-product-research-agent-skills/blob/main/skills/amazon-product-research-suite/references/route-plan.schema.json",
   "title": "Amazon Product Research Route Plan",
   "type": "object",
   "required": ["schema_version", "request_id", "decision", "scope", "selected_skills", "execution_order", "missing_inputs", "artifacts", "boundaries"],

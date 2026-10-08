@@ -6,8 +6,8 @@ authors:
   - name: "PDBen-Auto"
 repository-code: "https://github.com/PDBen-Auto/amazon-product-research-agent-skills"
 url: "https://github.com/PDBen-Auto/amazon-product-research-agent-skills"
-version: "0.1.0"
-date-released: "2026-09-29"
+version: "0.1.1"
+date-released: "2026-10-08"
 keywords:
   - Amazon product research
   - Agent Skills

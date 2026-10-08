@@ -96,7 +96,7 @@ class CatalogAndInstallerTests(unittest.TestCase):
         }
         self.assertEqual(set(cases), expected)
         for skill_name, matrix in cases.items():
-            self.assertGreaterEqual(len(matrix["should_trigger"]), 2, skill_name)
+            self.assertGreaterEqual(len(matrix["should_trigger"]), 3, skill_name)
             self.assertGreaterEqual(len(matrix["should_not_trigger"]), 2, skill_name)
 
     def test_catalog_validator(self) -> None:
@@ -107,7 +107,26 @@ class CatalogAndInstallerTests(unittest.TestCase):
             check=False,
         )
         self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertIn("7 skills", result.stdout)
+        self.assertIn("7 specialists", result.stdout)
+        self.assertIn("4 local Skills", result.stdout)
+
+    def test_standard_multi_skill_layout_keeps_all_local_skills_discoverable(self) -> None:
+        self.assertFalse((ROOT / "SKILL.md").exists())
+        expected = {
+            "amazon-product-research-suite",
+            "amazon-product-differentiation-rd",
+            "amazon-supplier-feasibility",
+            "amazon-unit-economics-cashflow",
+        }
+        discovered = {
+            path.parent.name
+            for path in (ROOT / "skills").glob("*/SKILL.md")
+        }
+        self.assertEqual(discovered, expected)
+        router = ROOT / "skills" / "amazon-product-research-suite"
+        self.assertTrue((router / "agents" / "openai.yaml").is_file())
+        self.assertTrue((router / "references" / "route-plan.schema.json").is_file())
+        self.assertTrue((router / "references" / "evidence-bundle.schema.json").is_file())
 
     def test_installer_dry_run_does_not_create_target(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
@@ -143,6 +162,21 @@ class CatalogAndInstallerTests(unittest.TestCase):
             (destination / "local-change.txt").write_text("preserve", encoding="utf-8")
             self.assertFalse(self.installer.install_one(skill, target, False, False, cache))
             self.assertEqual((destination / "local-change.txt").read_text(encoding="utf-8"), "preserve")
+
+
+class PublicSiteTests(unittest.TestCase):
+    def test_html_case_has_share_and_search_metadata(self) -> None:
+        report = (ROOT / "examples" / "magnetic-car-phone-mount" / "decision-report.html").read_text(encoding="utf-8")
+        self.assertIn('name="description"', report)
+        self.assertIn('rel="canonical"', report)
+        self.assertIn('property="og:title"', report)
+        self.assertIn('property="og:image"', report)
+
+    def test_pages_discovery_files_exist(self) -> None:
+        robots = (ROOT / "robots.txt").read_text(encoding="utf-8")
+        sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
+        self.assertIn("Sitemap:", robots)
+        self.assertIn("decision-report.html", sitemap)
 
 
 if __name__ == "__main__":

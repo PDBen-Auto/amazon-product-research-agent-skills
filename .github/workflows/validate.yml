@@ -17,6 +17,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
       - name: Validate catalog
         run: python scripts/validate_catalog.py
       - name: Validate example artifacts
@@ -29,3 +32,32 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Compile Python
         run: python -m compileall -q scripts skills
+      - name: Validate official Skills CLI discovery
+        env:
+          DISABLE_TELEMETRY: "1"
+        run: |
+          output="$(npx --yes skills@1.7.1 add . --list)"
+          for skill in \
+            amazon-product-research-suite \
+            amazon-product-differentiation-rd \
+            amazon-supplier-feasibility \
+            amazon-unit-economics-cashflow; do
+            grep -F "$skill" <<< "$output"
+          done
+      - name: Test official Skills CLI installs
+        env:
+          DISABLE_TELEMETRY: "1"
+        run: |
+          for skill in \
+            amazon-product-research-suite \
+            amazon-product-differentiation-rd \
+            amazon-supplier-feasibility \
+            amazon-unit-economics-cashflow; do
+            target="$(mktemp -d)"
+            (
+              cd "$target"
+              npx --yes skills@1.7.1 add "$GITHUB_WORKSPACE" \
+                --skill "$skill" --agent codex --copy --yes
+            )
+            find "$target" -path "*/$skill/SKILL.md" -type f | grep -q .
+          done

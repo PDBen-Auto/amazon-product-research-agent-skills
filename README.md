@@ -8,9 +8,9 @@ Turn Amazon market, review, product, supplier, and cost evidence into an auditab
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square)](https://www.python.org/)
 [![License](https://img.shields.io/badge/license-source--available-59636e?style=flat-square)](LICENSE)
 
-**Seven installable Agent Skills, one evidence contract, and one decision path.** Use a specialist for a narrow task or the suite router when a product question crosses market size, customer pain, differentiation, design risk, suppliers, economics, and stage gates.
+**One router, seven specialist Agent Skills, one evidence contract, and one decision path.** Use a specialist for a narrow task or the suite router when a product question crosses market size, customer pain, differentiation, design risk, suppliers, economics, and stage gates.
 
-[Download the latest ZIP](https://github.com/PDBen-Auto/amazon-product-research-agent-skills/releases/latest/download/amazon-product-research-agent-skills-v0.1.0.zip) · [Read in Chinese](README.zh-CN.md) · [Open the live HTML example](https://pdben-auto.github.io/amazon-product-research-agent-skills/examples/magnetic-car-phone-mount/decision-report.html)
+[Download the latest ZIP](https://github.com/PDBen-Auto/amazon-product-research-agent-skills/releases/latest/download/amazon-product-research-agent-skills-v0.1.1.zip) · [Read in Chinese](README.zh-CN.md) · [Open the live HTML example](https://pdben-auto.github.io/amazon-product-research-agent-skills/examples/magnetic-car-phone-mount/decision-report.html)
 
 ![Illustrative Amazon product decision report](examples/magnetic-car-phone-mount/preview.png)
 
@@ -36,6 +36,12 @@ Install the cross-functional router:
 npx skills add PDBen-Auto/amazon-product-research-agent-skills --skill amazon-product-research-suite
 ```
 
+Verify the repository exposes all four bundled Skills:
+
+```bash
+npx skills add PDBen-Auto/amazon-product-research-agent-skills --list
+```
+
 Then ask:
 
 ```text
@@ -44,12 +50,13 @@ Route only the work that can change the decision, list missing evidence,
 and return the artifact plan before any live collection.
 ```
 
-The router itself requires no Amazon login, Seller Central account, API key, or private service. Individual live-data Skills may require public network access, authorized exports, or tools stated in their own documentation.
+The router itself requires no Amazon login, Seller Central account, API key, or private service. Individual live-data Skills may require public network access, authorized exports, or tools stated in their own documentation. The official `skills` CLI reports anonymous aggregate installation telemetry to power the [skills.sh leaderboard](https://www.skills.sh/docs/faq); set `DISABLE_TELEMETRY=1` to opt out.
 
 ## Choose the smallest Skill
 
 | Product question | Installable Skill | Decision-ready output |
 | --- | --- | --- |
+| Which research modules should run, and in what order? | [`amazon-product-research-suite`](skills/amazon-product-research-suite/SKILL.md) | Route plan, missing evidence, execution order, shared evidence contract |
 | Which products define the direct market? | [`sellersprite-bi-market-research`](https://github.com/PDBen-Auto/sellersprite-amazon-market-research-bi-skill) | Candidate manifest, relevance decisions, parent-ASIN deduplication, coverage-gated BI HTML |
 | What do customers repeatedly complain about? | [`amazon-review-scraper`](https://github.com/PDBen-Auto/amazon-review-intelligence-skill) | Written-review evidence, canonical JSON, Excel workbook, offline VOC HTML |
 | What differentiated product should we build and test? | [`amazon-product-differentiation-rd`](skills/amazon-product-differentiation-rd/SKILL.md) | Evidence-to-mechanism map, measurable specification, experiments, kill criteria |
@@ -74,7 +81,7 @@ npx skills add PDBen-Auto/amazon-product-research-agent-skills --skill amazon-un
 - **Supplier feasibility before inventory**: RFQs normalize MOQ, tooling, quote basis, lead time, quality evidence, and sample gates instead of ranking factories by unit price alone.
 - **Profit and cash are separate**: the deterministic calculator distinguishes contribution margin from the cash required to fund the first order.
 - **Honest stopping behavior**: CAPTCHA, stale exports, missing fees, legal uncertainty, and absent supplier evidence become explicit blockers.
-- **No hidden tracking**: the installer has no telemetry, callbacks, credential collection, hidden prompts, or backdoors.
+- **No hidden tracking in the repository installer**: `scripts/install_suite.py` has no telemetry, callbacks, credential collection, hidden prompts, or backdoors. The optional official `skills` CLI has documented anonymous install telemetry and an opt-out.
 
 ## Reproducible example
 
@@ -114,15 +121,15 @@ The router accepts a product decision plus available ASINs, URLs, images, export
 
 Cross-Skill work uses:
 
-- [`schemas/route-plan.schema.json`](schemas/route-plan.schema.json) for routing, blockers, order, and expected artifacts;
-- [`schemas/evidence-bundle.schema.json`](schemas/evidence-bundle.schema.json) for source-indexed claims and assumptions;
+- [`route-plan.schema.json`](skills/amazon-product-research-suite/references/route-plan.schema.json) for routing, blockers, order, and expected artifacts;
+- [`evidence-bundle.schema.json`](skills/amazon-product-research-suite/references/evidence-bundle.schema.json) for source-indexed claims and assumptions;
 - `scripts/validate_artifact.py` for zero-dependency structural checks.
 
 No Skill in this suite claims to provide legal advice, certification approval, Amazon settlement data, guaranteed supplier performance, or a guaranteed market result.
 
 ## Supported clients
 
-The repository follows the common Agent Skills layout: `SKILL.md`, optional `agents/openai.yaml`, scripts, references, and assets. It is designed for Codex and compatible clients that discover Skill directories. Installation behavior varies by client; `npx skills add` is the shortest supported discovery path for this repository.
+The repository follows the common multi-Skill layout: `skills/<skill-name>/SKILL.md` with optional `agents/openai.yaml`, scripts, references, and assets inside each Skill directory. It is designed for Codex and compatible clients that discover Agent Skills. `npx skills add` is the primary public discovery and installation path for this repository.
 
 ## Validation
 
@@ -130,6 +137,7 @@ The repository follows the common Agent Skills layout: `SKILL.md`, optional `age
 python scripts/validate_catalog.py
 python -m unittest discover -s tests -v
 python -m compileall -q scripts skills
+npx skills add . --list
 ```
 
 GitHub Actions runs the same catalog, artifact, installer, test, and compile checks on every push and pull request.

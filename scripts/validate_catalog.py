@@ -16,6 +16,16 @@ REQUIRED = {
 
 
 def main() -> int:
+    assert not (ROOT / "SKILL.md").exists(), "root SKILL.md hides nested Skills from the official CLI"
+    bundled_skill_names = {
+        "amazon-product-research-suite",
+        "amazon-product-differentiation-rd",
+        "amazon-supplier-feasibility",
+        "amazon-unit-economics-cashflow",
+    }
+    for skill_name in bundled_skill_names:
+        skill_path = ROOT / "skills" / skill_name / "SKILL.md"
+        assert skill_path.is_file(), f"missing bundled Skill entrypoint: {skill_path}"
     data = json.loads(CATALOG.read_text(encoding="utf-8"))
     assert data.get("schema_version") == "1.1"
     assert isinstance(data.get("release"), str) and data["release"].startswith("v")
@@ -37,7 +47,7 @@ def main() -> int:
             assert (local_path / "SKILL.md").is_file(), f"missing bundled Skill: {local_path}"
         ids.add(skill["id"])
         skill_names.add(skill["skill_name"])
-    print(f"catalog valid: {len(skills)} skills ({sum(1 for s in skills if s['repository'].endswith('agent-skills'))} bundled)")
+    print(f"catalog valid: {len(skills)} specialists, {len(bundled_skill_names)} local Skills discoverable")
     return 0
 
 

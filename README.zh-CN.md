@@ -6,9 +6,9 @@
 [![Downloads](https://img.shields.io/github/downloads/PDBen-Auto/amazon-product-research-agent-skills/total?style=flat-square)](https://github.com/PDBen-Auto/amazon-product-research-agent-skills/releases)
 [![Validate](https://img.shields.io/github/actions/workflow/status/PDBen-Auto/amazon-product-research-agent-skills/validate.yml?branch=main&style=flat-square&label=validate)](https://github.com/PDBen-Auto/amazon-product-research-agent-skills/actions/workflows/validate.yml)
 
-**7 个可独立安装的 Skill、统一证据契约和一条完整决策链。** 单一问题使用专业 Skill；当问题跨越市场、用户、研发、外观风险、供应链、财务和阶段门时，使用统一路由器。
+**1 个路由器、7 个专业 Skill、统一证据契约和一条完整决策链。** 单一问题使用专业 Skill；当问题跨越市场、用户、研发、外观风险、供应链、财务和阶段门时，使用统一路由器。
 
-[下载最新 ZIP](https://github.com/PDBen-Auto/amazon-product-research-agent-skills/releases/latest/download/amazon-product-research-agent-skills-v0.1.0.zip) · [在线查看完整 HTML 案例](https://pdben-auto.github.io/amazon-product-research-agent-skills/examples/magnetic-car-phone-mount/decision-report.html) · [English](README.md)
+[下载最新 ZIP](https://github.com/PDBen-Auto/amazon-product-research-agent-skills/releases/latest/download/amazon-product-research-agent-skills-v0.1.1.zip) · [在线查看完整 HTML 案例](https://pdben-auto.github.io/amazon-product-research-agent-skills/examples/magnetic-car-phone-mount/decision-report.html) · [English](README.md)
 
 ![Amazon 产品决策案例预览](examples/magnetic-car-phone-mount/preview.png)
 
@@ -31,6 +31,12 @@
 npx skills add PDBen-Auto/amazon-product-research-agent-skills --skill amazon-product-research-suite
 ```
 
+检查仓库是否正确暴露 4 个内置 Skill：
+
+```bash
+npx skills add PDBen-Auto/amazon-product-research-agent-skills --list
+```
+
 然后输入：
 
 ```text
@@ -39,12 +45,13 @@ npx skills add PDBen-Auto/amazon-product-research-agent-skills --skill amazon-pr
 不要在没有授权时进行实时采集。
 ```
 
-路由器本身不需要 Amazon 登录、Seller Central 账号、API Key 或私有服务。专业 Skill 进行实时采集时，可能需要公开网络、用户授权的导出文件或其文档中明确说明的工具。
+路由器本身不需要 Amazon 登录、Seller Central 账号、API Key 或私有服务。专业 Skill 进行实时采集时，可能需要公开网络、用户授权的导出文件或其文档中明确说明的工具。官方 `skills` CLI 会向 [skills.sh](https://www.skills.sh/docs/faq) 上报匿名汇总安装统计，用于目录排名；设置 `DISABLE_TELEMETRY=1` 可以退出。
 
-## 7 个 Skill
+## 1 个路由器 + 7 个专业 Skill
 
 | 产品问题 | Skill | 输出 |
 | --- | --- | --- |
+| 应该运行哪些研究模块，先后顺序是什么？ | `amazon-product-research-suite` | 路由计划、缺失证据、执行顺序、统一证据契约 |
 | 真实直接市场由哪些产品组成？ | `sellersprite-bi-market-research` | 候选清单、相关性判断、父 ASIN 去重、覆盖闸门、BI HTML |
 | 用户反复抱怨什么？ | `amazon-review-scraper` | 评论原文证据、JSON、Excel、离线 VOC HTML |
 | 应该做什么差异化产品？ | `amazon-product-differentiation-rd` | 证据到机制映射、可测规格、实验、淘汰标准 |
@@ -69,7 +76,7 @@ npx skills add PDBen-Auto/amazon-product-research-agent-skills --skill amazon-un
 - **下单前验证供应链**：统一 MOQ、模具、报价口径、交期、质量证据和样品门槛，而不是只比较单价。
 - **利润和现金分开计算**：确定性计算器区分单件贡献毛利与首单资金需求。
 - **遇到缺证据就停止**：验证码、过期数据、费用缺失、法律不确定性和供应商证据不足都会变成显式阻断。
-- **没有隐藏追踪**：安装器不包含遥测、回调、凭证收集、隐藏提示词或后门。
+- **仓库安装器没有隐藏追踪**：`scripts/install_suite.py` 不包含遥测、回调、凭证收集、隐藏提示词或后门；官方 `skills` CLI 的匿名安装统计和退出方式已公开说明。
 
 ## 可复现案例
 
