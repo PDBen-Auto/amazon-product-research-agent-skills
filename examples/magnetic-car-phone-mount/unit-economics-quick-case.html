@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Amazon FBA Unit Economics Example | Magnetic Car Phone Mount</title>
+  <meta name="description" content="A reproducible Amazon US unit economics example: $29.99 price, $6.68 base contribution, downside return and ad scenarios, and $12,550 first-order cash. Synthetic assumptions, not live fees.">
+  <link rel="canonical" href="https://pdben-auto.github.io/amazon-product-research-agent-skills/examples/magnetic-car-phone-mount/unit-economics-quick-case.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Amazon FBA unit economics: a worked product example">
+  <meta property="og:description" content="Recalculate contribution, downside scenarios, and first-order cash from a public synthetic fixture.">
+  <meta property="og:url" content="https://pdben-auto.github.io/amazon-product-research-agent-skills/examples/magnetic-car-phone-mount/unit-economics-quick-case.html">
+  <meta property="og:image" content="https://pdben-auto.github.io/amazon-product-research-agent-skills/examples/magnetic-car-phone-mount/preview.png">
+  <style>
+    :root{--ink:#182027;--muted:#52606b;--line:#dce2e6;--paper:#f6f8f9;--white:#fff;--accent:#1769aa;--soft:#eaf3fb;--warn:#75540e;--warn-bg:#fff5db;--green:#087f5b}
+    *{box-sizing:border-box}html{background:var(--paper);color:var(--ink);font-family:Segoe UI,Arial,sans-serif;letter-spacing:0}body{margin:0}main{max-width:1060px;margin:auto;padding:28px 24px 64px}a{color:var(--accent)}a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}nav{display:flex;gap:18px;flex-wrap:wrap;font-size:14px;padding-bottom:18px;border-bottom:1px solid var(--line)}header{padding:36px 0 28px;border-bottom:1px solid var(--line)}h1{font-size:clamp(30px,4vw,48px);line-height:1.12;max-width:850px;margin:0 0 14px}h2{font-size:22px;line-height:1.2;margin:0 0 16px}p{line-height:1.55}.lede{font-size:17px;color:var(--muted);max-width:760px;margin:0}.notice{background:var(--warn-bg);color:var(--warn);padding:12px 16px;margin:22px 0 0;border-left:4px solid #c58a13;font-size:14px}.figures{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}.figure{padding:18px 0;border-top:3px solid var(--accent)}.figure:nth-child(2){border-color:var(--green)}.figure:nth-child(3){border-color:#c58a13}.figure span{display:block;color:var(--muted);font-size:13px}.figure strong{display:block;font-size:30px;margin:9px 0 3px;font-variant-numeric:tabular-nums}.figure small{color:var(--muted)}section{margin-top:42px}.split{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}.assumptions{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line)}th{color:var(--muted);font-weight:600}td:last-child,th:last-child{text-align:right;font-variant-numeric:tabular-nums}.bars{display:grid;gap:16px}.bar-row{display:grid;grid-template-columns:1fr auto;gap:6px 12px;font-size:14px}.bar-row b{font-variant-numeric:tabular-nums}.track{grid-column:1/-1;height:12px;background:#e4e9ec}.fill{height:100%;background:var(--accent)}.bar-row:nth-child(2) .fill{background:#578da9}.bar-row:nth-child(3) .fill{background:#8ba4af}.formula{font:14px/1.6 Consolas,monospace;padding:15px 18px;background:#eaf0f3;overflow-wrap:anywhere}.source{font-size:13px;color:var(--muted)}.next{padding-top:24px;border-top:1px solid var(--line)}code{font-family:Consolas,monospace}pre{overflow-x:auto;padding:15px 18px;background:#182027;color:#fff;font-size:13px;line-height:1.5}img{display:block;width:100%;height:auto;border:1px solid var(--line)}.foot{font-size:13px;color:var(--muted);border-top:1px solid var(--line);margin-top:44px;padding-top:16px}@media(max-width:700px){main{padding:20px 16px 48px}header{padding:28px 0 24px}.figures,.split{grid-template-columns:1fr}.figures{gap:0}.figure{padding:14px 0}.split{gap:26px}section{margin-top:32px}}
+  </style>
+</head>
+<body>
+<main>
+  <nav aria-label="Related resources"><a href="../../README.md">Suite and installation</a><a href="decision-report.html">Full product decision</a><a href="https://github.com/PDBen-Auto/amazon-review-intelligence-skill">Review intelligence</a></nav>
+  <header>
+    <h1>Will this product still make money after returns and ads?</h1>
+    <p class="lede">A magnetic car phone mount is priced at $29.99 in this Amazon US fixture. The calculator separates profit per unit from the cash needed to place the first order.</p>
+    <div class="notice"><strong>Illustrative, not live Amazon data.</strong> Prices, fees, return rates, advertising costs, and supplier terms below are synthetic assumptions. Replace every value with current evidence before making a purchasing decision.</div>
+    <div class="figures" aria-label="Base scenario results">
+      <div class="figure"><span>Base contribution per unit</span><strong>$6.68</strong><small>22.3% of selling price</small></div>
+      <div class="figure"><span>Break-even ACOS</span><strong>36.3%</strong><small>Mathematical ceiling, not a target</small></div>
+      <div class="figure"><span>First-order cash required</span><strong>$12,550</strong><small>1,000 units, setup, and buffer</small></div>
+    </div>
+  </header>
+
+  <section class="split" aria-labelledby="assumptions-title">
+    <div>
+      <h2 id="assumptions-title">What goes into one sale</h2>
+      <table class="assumptions"><tbody>
+        <tr><th scope="row">Selling price</th><td>$29.99</td></tr>
+        <tr><th scope="row">Return rate</th><td>6%</td></tr>
+        <tr><th scope="row">Referral fee rate</th><td>15%</td></tr>
+        <tr><th scope="row">Fulfillment fee</th><td>$4.25</td></tr>
+        <tr><th scope="row">Landed product cost</th><td>$7.80</td></tr>
+        <tr><th scope="row">Advertising ACOS</th><td>14%</td></tr>
+        <tr><th scope="row">Other variable cost</th><td>$0.55</td></tr>
+      </tbody></table>
+      <p class="source">Source: <a href="input/unit-economics-assumptions.json">public input fixture</a>. Return loss is $8.00 for each returned unit.</p>
+    </div>
+    <div>
+      <h2>How $6.68 is calculated</h2>
+      <p class="formula">$28.1906 realized revenue after returns - $4.22859 referral fee - $4.25 fulfillment - $7.80 landed cost - $0.48 expected return loss - $4.1986 ads - $0.55 other = $6.68341 contribution</p>
+      <p>The 22.3% contribution margin divides $6.68341 by the $29.99 list price. This is a contribution model, not a net-profit or Amazon settlement statement.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="stress-title">
+    <h2 id="stress-title">Stress the assumptions before ordering</h2>
+    <div class="split">
+      <div class="bars" role="img" aria-label="Contribution per unit: base $6.68; returns at 14 percent $4.00; ACOS at 25 percent $3.38">
+        <div class="bar-row"><span>Base: 6% returns, 14% ACOS</span><b>$6.68</b><div class="track"><div class="fill" style="width:100%"></div></div></div>
+        <div class="bar-row"><span>Returns rise to 14%</span><b>$4.00</b><div class="track"><div class="fill" style="width:59.9%"></div></div></div>
+        <div class="bar-row"><span>ACOS rises to 25%</span><b>$3.38</b><div class="track"><div class="fill" style="width:50.6%"></div></div></div>
+      </div>
+      <p>Each downside changes one assumption while holding the others fixed. Both remain positive in this fixture, but the lower contribution leaves less room for costs the model has not captured. The two downside cases are not a combined worst case.</p>
+    </div>
+  </section>
+
+  <section class="split" aria-labelledby="cash-title">
+    <div>
+      <h2 id="cash-title">Profit is not first-order cash</h2>
+      <p class="formula">1,000 units x $7.80 landed cost = $7,800 purchase order<br>$7,800 + $1,800 tooling + $450 setup + $2,500 working-capital buffer = $12,550</p>
+      <p>The 30% deposit is $2,340 and the pre-shipment balance is $5,460. These are payment stages within the $7,800 purchase order, not extra costs to add again.</p>
+    </div>
+    <div>
+      <h2>Reproduce the result</h2>
+      <pre><code>python skills/amazon-unit-economics-cashflow/scripts/unit_economics.py \
+  examples/magnetic-car-phone-mount/input/unit-economics-assumptions.json \
+  --output unit-economics.json --pretty</code></pre>
+      <p>Compare with the <a href="unit-economics.json">checked output JSON</a>. The script uses Python 3.10+ and no third-party packages.</p>
+    </div>
+  </section>
+
+  <section class="next" aria-labelledby="next-title">
+    <h2 id="next-title">Take this into a real product decision</h2>
+    <p>Start with <a href="https://github.com/PDBen-Auto/amazon-review-intelligence-skill">review evidence</a> to identify product pain, then supply your own price, fees, returns, ad spend, and supplier terms to the <a href="../../skills/amazon-unit-economics-cashflow/SKILL.md">unit-economics Skill</a>. The review repository's synthetic case is a separate product; its numbers are not inputs to this mount example.</p>
+    <pre><code>npx skills add PDBen-Auto/amazon-product-research-agent-skills --skill amazon-unit-economics-cashflow</code></pre>
+    <p>Before inventory commitment, confirm current Amazon fees, a real supplier quote, sample performance, and design-rights review. The <a href="decision-report.html">full decision example</a> keeps those gates open.</p>
+  </section>
+  <div class="foot">Synthetic, reproducible fixture. No real ASIN, customer data, or live marketplace outcome is claimed.</div>
+</main>
+</body>
+</html>

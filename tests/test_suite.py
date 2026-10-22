@@ -177,6 +177,17 @@ class PublicSiteTests(unittest.TestCase):
         sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
         self.assertIn("Sitemap:", robots)
         self.assertIn("decision-report.html", sitemap)
+        self.assertIn("unit-economics-quick-case.html", sitemap)
+
+    def test_unit_economics_case_links_inputs_and_install(self) -> None:
+        report = (ROOT / "examples" / "magnetic-car-phone-mount" / "unit-economics-quick-case.html").read_text(encoding="utf-8")
+        self.assertIn('name="description"', report)
+        self.assertIn('rel="canonical"', report)
+        self.assertIn('property="og:title"', report)
+        self.assertIn('input/unit-economics-assumptions.json', report)
+        self.assertIn('href="unit-economics.json"', report)
+        self.assertIn('--skill amazon-unit-economics-cashflow', report)
+        self.assertIn('not live Amazon data', report)
 
 
 if __name__ == "__main__":

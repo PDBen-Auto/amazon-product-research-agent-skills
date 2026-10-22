@@ -10,7 +10,7 @@ Turn Amazon market, review, product, supplier, and cost evidence into an auditab
 
 **One router, seven specialist Agent Skills, one evidence contract, and one decision path.** Use a specialist for a narrow task or the suite router when a product question crosses market size, customer pain, differentiation, design risk, suppliers, economics, and stage gates.
 
-[Download the latest ZIP](https://github.com/PDBen-Auto/amazon-product-research-agent-skills/releases/latest/download/amazon-product-research-agent-skills-v0.1.1.zip) · [Read in Chinese](README.zh-CN.md) · [Open the live HTML example](https://pdben-auto.github.io/amazon-product-research-agent-skills/examples/magnetic-car-phone-mount/decision-report.html)
+[Download the latest ZIP](https://github.com/PDBen-Auto/amazon-product-research-agent-skills/releases/latest/download/amazon-product-research-agent-skills-v0.1.1.zip) · [Read in Chinese](README.zh-CN.md) · [See the unit economics example](https://pdben-auto.github.io/amazon-product-research-agent-skills/examples/magnetic-car-phone-mount/unit-economics-quick-case.html) · [Open the full decision example](https://pdben-auto.github.io/amazon-product-research-agent-skills/examples/magnetic-car-phone-mount/decision-report.html)
 
 ![Illustrative Amazon product decision report](examples/magnetic-car-phone-mount/preview.png)
 
@@ -93,6 +93,8 @@ The magnetic car phone mount fixture includes:
 - base and downside unit-economics scenarios;
 - a self-contained offline HTML decision report;
 - hard gates for supplier quotes and design-patent pre-screening.
+
+Start with the [short unit economics case](examples/magnetic-car-phone-mount/unit-economics-quick-case.html) to see a $29.99 synthetic product move from $6.68 base contribution to $4.00 with higher returns or $3.38 with higher ad spend, while first-order cash remains a separate $12,550 requirement. All inputs and output JSON are linked in the case. For customer-voice collection, use the independent [Amazon Review Intelligence Skill](https://github.com/PDBen-Auto/amazon-review-intelligence-skill); its synthetic review example is not the mount's source data.
 
 Reproduce it with Python 3.10+ and no third-party packages:
 

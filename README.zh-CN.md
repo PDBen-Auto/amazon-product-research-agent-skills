@@ -8,7 +8,7 @@
 
 **1 个路由器、7 个专业 Skill、统一证据契约和一条完整决策链。** 单一问题使用专业 Skill；当问题跨越市场、用户、研发、外观风险、供应链、财务和阶段门时，使用统一路由器。
 
-[下载最新 ZIP](https://github.com/PDBen-Auto/amazon-product-research-agent-skills/releases/latest/download/amazon-product-research-agent-skills-v0.1.1.zip) · [在线查看完整 HTML 案例](https://pdben-auto.github.io/amazon-product-research-agent-skills/examples/magnetic-car-phone-mount/decision-report.html) · [English](README.md)
+[下载最新 ZIP](https://github.com/PDBen-Auto/amazon-product-research-agent-skills/releases/latest/download/amazon-product-research-agent-skills-v0.1.1.zip) · [查看单位经济速览案例](https://pdben-auto.github.io/amazon-product-research-agent-skills/examples/magnetic-car-phone-mount/unit-economics-quick-case.html) · [在线查看完整决策案例](https://pdben-auto.github.io/amazon-product-research-agent-skills/examples/magnetic-car-phone-mount/decision-report.html) · [English](README.md)
 
 ![Amazon 产品决策案例预览](examples/magnetic-car-phone-mount/preview.png)
 
@@ -81,6 +81,8 @@ npx skills add PDBen-Auto/amazon-product-research-agent-skills --skill amazon-un
 ## 可复现案例
 
 磁吸车载手机支架案例包含产品简报、跨 Skill 路由、证据包、基础与下行情景单位经济，以及无需服务器即可打开的 HTML 决策报告。结论为 `CONDITIONAL_GO_FOR_SAMPLE`：只有在确认当前费用、供应商报价和外观专利预筛后，才进入下一阶段。
+
+可先看[单位经济速览案例](examples/magnetic-car-phone-mount/unit-economics-quick-case.html)：$29.99 的合成售价对应基础单件贡献 $6.68；退货率或广告成本单独上升时，贡献分别降至 $4.00 和 $3.38。首单现金需求 $12,550 单独计算。页面链接了输入和结果 JSON。评论采集可使用独立的 [Amazon 评论洞察 Skill](https://github.com/PDBen-Auto/amazon-review-intelligence-skill)；其合成评论案例不是车载支架案例的数据来源。
 
 ```bash
 python scripts/validate_artifact.py route-plan examples/magnetic-car-phone-mount/route-plan.json
