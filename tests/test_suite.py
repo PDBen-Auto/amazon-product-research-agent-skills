@@ -188,6 +188,7 @@ class PublicSiteTests(unittest.TestCase):
         self.assertIn('href="unit-economics.json"', report)
         self.assertIn('--skill amazon-unit-economics-cashflow', report)
         self.assertIn('not live Amazon data', report)
+        self.assertIn('github.com/PDBen-Auto/amazon-product-research-agent-skills/blob/main/skills/amazon-unit-economics-cashflow/SKILL.md', report)
 
 
 if __name__ == "__main__":
