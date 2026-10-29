@@ -10,6 +10,12 @@
 
 [下载最新 ZIP](https://github.com/PDBen-Auto/amazon-product-research-agent-skills/releases/latest/download/amazon-product-research-agent-skills-v0.1.1.zip) · [查看单位经济速览案例](https://pdben-auto.github.io/amazon-product-research-agent-skills/examples/magnetic-car-phone-mount/unit-economics-quick-case.html) · [在线查看完整决策案例](https://pdben-auto.github.io/amazon-product-research-agent-skills/examples/magnetic-car-phone-mount/decision-report.html) · [English](README.md)
 
+想从完整案例中的单位经济测算开始，先安装 `amazon-unit-economics-cashflow`：
+
+```bash
+npx skills add PDBen-Auto/amazon-product-research-agent-skills --skill amazon-unit-economics-cashflow
+```
+
 ![Amazon 产品决策案例预览](examples/magnetic-car-phone-mount/preview.png)
 
 > 图片来自公开演示数据，用于展示工作流和输出契约，不代表实时 Amazon 市场结论。

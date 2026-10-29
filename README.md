@@ -12,6 +12,12 @@ Turn Amazon market, review, product, supplier, and cost evidence into an auditab
 
 [Download the latest ZIP](https://github.com/PDBen-Auto/amazon-product-research-agent-skills/releases/latest/download/amazon-product-research-agent-skills-v0.1.1.zip) · [Read in Chinese](README.zh-CN.md) · [See the unit economics example](https://pdben-auto.github.io/amazon-product-research-agent-skills/examples/magnetic-car-phone-mount/unit-economics-quick-case.html) · [Open the full decision example](https://pdben-auto.github.io/amazon-product-research-agent-skills/examples/magnetic-car-phone-mount/decision-report.html)
 
+To try the worked unit economics case with one Skill, install `amazon-unit-economics-cashflow`:
+
+```bash
+npx skills add PDBen-Auto/amazon-product-research-agent-skills --skill amazon-unit-economics-cashflow
+```
+
 ![Illustrative Amazon product decision report](examples/magnetic-car-phone-mount/preview.png)
 
 > The screenshot is generated from public illustrative fixtures. It demonstrates the workflow and artifact contract, not current Amazon market facts.
