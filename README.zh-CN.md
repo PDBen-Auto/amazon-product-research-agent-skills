@@ -16,6 +16,14 @@
 npx skills add PDBen-Auto/amazon-product-research-agent-skills --skill amazon-unit-economics-cashflow
 ```
 
+要复算[演示案例](examples/magnetic-car-phone-mount/unit-economics-quick-case.html)，下载并解压 ZIP，在解压后的仓库根目录运行（需 Python 3.10+）：
+
+```bash
+python skills/amazon-unit-economics-cashflow/scripts/unit_economics.py examples/magnetic-car-phone-mount/input/unit-economics-assumptions.json --pretty
+```
+
+这组虚构输入得到单件基础贡献 $6.68；退货率上升时为 $4.00，广告成本上升时为 $3.38。用于实际决策前，请把 JSON 换成有来源的费用和成本数据。
+
 ![Amazon 产品决策案例预览](examples/magnetic-car-phone-mount/preview.png)
 
 > 图片来自公开演示数据，用于展示工作流和输出契约，不代表实时 Amazon 市场结论。

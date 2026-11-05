@@ -18,6 +18,14 @@ To try the worked unit economics case with one Skill, install `amazon-unit-econo
 npx skills add PDBen-Auto/amazon-product-research-agent-skills --skill amazon-unit-economics-cashflow
 ```
 
+To reproduce the [worked case](examples/magnetic-car-phone-mount/unit-economics-quick-case.html), download and extract the ZIP, then run this from the extracted repository root (Python 3.10+):
+
+```bash
+python skills/amazon-unit-economics-cashflow/scripts/unit_economics.py examples/magnetic-car-phone-mount/input/unit-economics-assumptions.json --pretty
+```
+
+The synthetic inputs produce $6.68 base contribution per unit, $4.00 with higher returns, and $3.38 with higher ad spend. Edit the JSON with your own documented fees and costs before using the model for a decision.
+
 ![Illustrative Amazon product decision report](examples/magnetic-car-phone-mount/preview.png)
 
 > The screenshot is generated from public illustrative fixtures. It demonstrates the workflow and artifact contract, not current Amazon market facts.
