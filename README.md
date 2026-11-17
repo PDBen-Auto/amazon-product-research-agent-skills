@@ -1,3 +1,18 @@
+<!-- skill-i18n:start -->
+[简体中文](README.zh-CN.md) | [English](README.en.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Deutsch](README.de.md) | [Français](README.fr.md) | [Español](README.es.md) | [Português](README.pt.md)
+
+### Complete specification
+
+- [Evidence-led product differentiation](skills/amazon-product-differentiation-rd/references/i18n/en.md) · `amazon-product-differentiation-rd`
+- [Amazon product research suite](skills/amazon-product-research-suite/references/i18n/en.md) · `amazon-product-research-suite`
+- [Supplier feasibility and sample gates](skills/amazon-supplier-feasibility/references/i18n/en.md) · `amazon-supplier-feasibility`
+- [Unit economics and first-order cash](skills/amazon-unit-economics-cashflow/references/i18n/en.md) · `amazon-unit-economics-cashflow`
+
+Use the user's explicitly requested output language; otherwise follow the request language. Keep commands, skill IDs, JSON keys, enum values, units and source quotations unchanged. Separate translations from originals. Never infer country, currency or jurisdiction from language. Read the relevant detailed references in the complete specification and retain all existing validation and authorization gates.
+
+This localized operating guide covers purpose, prerequisites, inputs, outputs, workflow, examples and boundaries; it is not a line-by-line translation of every reference. Detailed technical references, historical cases, script errors, example interfaces and images retain their original language. The assistant can explain them in the requested language. Structural, link and key-constraint checks are performed; native-speaker editorial review for each language is not claimed.
+<!-- skill-i18n:end -->
+
 # Amazon Product Research Agent Skills
 
 Turn Amazon market, review, product, supplier, and cost evidence into an auditable prototype or Go/No-Go decision.

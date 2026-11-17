@@ -1,3 +1,18 @@
+<!-- skill-i18n:start -->
+[简体中文](README.zh-CN.md) | [English](README.en.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Deutsch](README.de.md) | [Français](README.fr.md) | [Español](README.es.md) | [Português](README.pt.md)
+
+### 完整规范
+
+- [证据驱动的产品差异化](skills/amazon-product-differentiation-rd/references/i18n/zh-CN.md) · `amazon-product-differentiation-rd`
+- [Amazon 产品研究套件](skills/amazon-product-research-suite/references/i18n/zh-CN.md) · `amazon-product-research-suite`
+- [供应商可行性与样品闸门](skills/amazon-supplier-feasibility/references/i18n/zh-CN.md) · `amazon-supplier-feasibility`
+- [单件经济与首单现金](skills/amazon-unit-economics-cashflow/references/i18n/zh-CN.md) · `amazon-unit-economics-cashflow`
+
+按用户明确指定的语言输出，否则跟随请求语言。保留命令、技能 ID、JSON 键、枚举值、单位和来源原文；翻译与原文分开，不通过语言推定国家、币种或司法辖区。先读取完整规范中与任务相关的详细引用，执行原有校验和授权要求。
+
+这是本技能的本地化操作指南，覆盖用途、依赖、输入输出、步骤、示例及边界，不是全部引用文档的逐句翻译。详细技术引用、历史案例、脚本错误、示例网页及图片保留原文；助手可按请求解释它们。本次文档经过结构、链接和关键约束核对，尚无逐语种母语人工审校。
+<!-- skill-i18n:end -->
+
 # Amazon 产品研究 Agent Skills
 
 把 Amazon 市场、评论、产品、供应商和成本证据，转成可审计的打样或 Go/No-Go 决策。

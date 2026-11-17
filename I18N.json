@@ -1,0 +1,270 @@
+{
+  "schemaVersion": 1,
+  "locales": [
+    "zh-CN",
+    "en",
+    "ja",
+    "ko",
+    "de",
+    "fr",
+    "es",
+    "pt"
+  ],
+  "scope": "localized-operating-guides-and-requested-assistant-output",
+  "referenceTranslations": "partial; technical references and example UIs retain original language",
+  "nativeSpeakerReview": false,
+  "baseCommit": "0185813828457a096bb3bad74f4f98c55bb101a2",
+  "repository": "PDBen-Auto/amazon-product-research-agent-skills",
+  "skills": [
+    {
+      "name": "amazon-product-differentiation-rd",
+      "path": "skills/amazon-product-differentiation-rd/SKILL.md",
+      "directory": "skills/amazon-product-differentiation-rd",
+      "sourceSha256": "349cb13d63d336db0888fec17bd892ae4a67d5e5a1d5fd156055b3d7e520ee42",
+      "guides": {
+        "zh-CN": "skills/amazon-product-differentiation-rd/references/i18n/zh-CN.md",
+        "en": "skills/amazon-product-differentiation-rd/references/i18n/en.md",
+        "ja": "skills/amazon-product-differentiation-rd/references/i18n/ja.md",
+        "ko": "skills/amazon-product-differentiation-rd/references/i18n/ko.md",
+        "de": "skills/amazon-product-differentiation-rd/references/i18n/de.md",
+        "fr": "skills/amazon-product-differentiation-rd/references/i18n/fr.md",
+        "es": "skills/amazon-product-differentiation-rd/references/i18n/es.md",
+        "pt": "skills/amazon-product-differentiation-rd/references/i18n/pt.md"
+      },
+      "updatedSha256": "5bd38bca703f3012b2fb48d9b93b8eabb87ccd28f39f89c29c68f2426ca46efd"
+    },
+    {
+      "name": "amazon-product-research-suite",
+      "path": "skills/amazon-product-research-suite/SKILL.md",
+      "directory": "skills/amazon-product-research-suite",
+      "sourceSha256": "b0a9d6b058a33b9df94fcbc609d96d579fc00a5f3b81a759a77988b3917a1f14",
+      "guides": {
+        "zh-CN": "skills/amazon-product-research-suite/references/i18n/zh-CN.md",
+        "en": "skills/amazon-product-research-suite/references/i18n/en.md",
+        "ja": "skills/amazon-product-research-suite/references/i18n/ja.md",
+        "ko": "skills/amazon-product-research-suite/references/i18n/ko.md",
+        "de": "skills/amazon-product-research-suite/references/i18n/de.md",
+        "fr": "skills/amazon-product-research-suite/references/i18n/fr.md",
+        "es": "skills/amazon-product-research-suite/references/i18n/es.md",
+        "pt": "skills/amazon-product-research-suite/references/i18n/pt.md"
+      },
+      "updatedSha256": "cc2a9506cdc62c3a53474b35abf60d9aa99735447094b77128b11cc182c8e5a6"
+    },
+    {
+      "name": "amazon-supplier-feasibility",
+      "path": "skills/amazon-supplier-feasibility/SKILL.md",
+      "directory": "skills/amazon-supplier-feasibility",
+      "sourceSha256": "534bc12844e94692c55d2ca4de47f2112993ed0f9c80bcb3f7a6ee72c814955d",
+      "guides": {
+        "zh-CN": "skills/amazon-supplier-feasibility/references/i18n/zh-CN.md",
+        "en": "skills/amazon-supplier-feasibility/references/i18n/en.md",
+        "ja": "skills/amazon-supplier-feasibility/references/i18n/ja.md",
+        "ko": "skills/amazon-supplier-feasibility/references/i18n/ko.md",
+        "de": "skills/amazon-supplier-feasibility/references/i18n/de.md",
+        "fr": "skills/amazon-supplier-feasibility/references/i18n/fr.md",
+        "es": "skills/amazon-supplier-feasibility/references/i18n/es.md",
+        "pt": "skills/amazon-supplier-feasibility/references/i18n/pt.md"
+      },
+      "updatedSha256": "86c0e0428b338e25621bc95823a9f681c156f5882f0012136f23eace4e3ae304"
+    },
+    {
+      "name": "amazon-unit-economics-cashflow",
+      "path": "skills/amazon-unit-economics-cashflow/SKILL.md",
+      "directory": "skills/amazon-unit-economics-cashflow",
+      "sourceSha256": "e199e1f0ab6d436e6a30614afdba540445be1d1539877f64158554c4732dde8e",
+      "guides": {
+        "zh-CN": "skills/amazon-unit-economics-cashflow/references/i18n/zh-CN.md",
+        "en": "skills/amazon-unit-economics-cashflow/references/i18n/en.md",
+        "ja": "skills/amazon-unit-economics-cashflow/references/i18n/ja.md",
+        "ko": "skills/amazon-unit-economics-cashflow/references/i18n/ko.md",
+        "de": "skills/amazon-unit-economics-cashflow/references/i18n/de.md",
+        "fr": "skills/amazon-unit-economics-cashflow/references/i18n/fr.md",
+        "es": "skills/amazon-unit-economics-cashflow/references/i18n/es.md",
+        "pt": "skills/amazon-unit-economics-cashflow/references/i18n/pt.md"
+      },
+      "updatedSha256": "dc0a55a1063105cd9b6f68ff02c9f703765c5d2305550f074499aca3530c8ad2"
+    }
+  ],
+  "documents": {
+    "README.de.md": {
+      "sha256": "45b29df4e0832cf2d254bf9e236793ccc322da5043ba44149d64db4b5d099954",
+      "size": 7246
+    },
+    "README.en.md": {
+      "sha256": "955e6b7c4fffb34a0a94e842e7a521b909baa1827f5aa30b01a90ab3daa1f9c7",
+      "size": 7225
+    },
+    "README.es.md": {
+      "sha256": "039c13a738e431f52e27e5ceb9f6135d15f5dca26e729bd864ee1b39b566840f",
+      "size": 7065
+    },
+    "README.fr.md": {
+      "sha256": "1e6e1c593bbbd4d75ba3f8b6821738af731a5066ba35826de6e5cd2ee0faafa7",
+      "size": 7390
+    },
+    "README.ja.md": {
+      "sha256": "9035fcebcb782048806e861271aeedec410e58735bb7e319ecd50578b18ccf50",
+      "size": 7182
+    },
+    "README.ko.md": {
+      "sha256": "9605e5610b206cfb1f6c3728bb55594a1053aeb9effab6ae2588e047256456db",
+      "size": 7155
+    },
+    "README.md": {
+      "sha256": "4780c99aaac9deade6bb1464a08602ace458fc82fe0e0f1044597ad9f6cf5830",
+      "size": 13853
+    },
+    "README.pt.md": {
+      "sha256": "d13b55a48f816489d771b25a1e0999e7099beb7ad47b07a0409f6907e556ad24",
+      "size": 7092
+    },
+    "README.zh-CN.md": {
+      "sha256": "089995a4305e9451baa3245a7eba56081dc68e13e3c7a2a8117c32a8dd53fde4",
+      "size": 9989
+    },
+    "skills/amazon-product-differentiation-rd/SKILL.md": {
+      "sha256": "5bd38bca703f3012b2fb48d9b93b8eabb87ccd28f39f89c29c68f2426ca46efd",
+      "size": 6300
+    },
+    "skills/amazon-product-differentiation-rd/references/i18n/de.md": {
+      "sha256": "ee3052bbf5ec43db9acd4e76d8bdde461054275def07a92b346ee6132503ed54",
+      "size": 3030
+    },
+    "skills/amazon-product-differentiation-rd/references/i18n/en.md": {
+      "sha256": "b9d46c962474efaa56c9163d6e525471ef68b7f56ec8d9e8a5aed0bb6ce1056c",
+      "size": 3059
+    },
+    "skills/amazon-product-differentiation-rd/references/i18n/es.md": {
+      "sha256": "83b8b2724015ad5d576a6ac9460dd59894e665e29793d604416c5680389665df",
+      "size": 3057
+    },
+    "skills/amazon-product-differentiation-rd/references/i18n/fr.md": {
+      "sha256": "33aae5245f79db1e4c1b59a8a88c856126a39418bc9bc7bc9a09dc34b9b5654c",
+      "size": 3169
+    },
+    "skills/amazon-product-differentiation-rd/references/i18n/ja.md": {
+      "sha256": "c3797bad1a25c2991be359a0c4d05f2f5456a712bf66eaffd00b71f0b22c1b0c",
+      "size": 2880
+    },
+    "skills/amazon-product-differentiation-rd/references/i18n/ko.md": {
+      "sha256": "f3a0d3b77ca544c0d3de4631c27809929e5cee0c47084dfb80c032f126ee3118",
+      "size": 2923
+    },
+    "skills/amazon-product-differentiation-rd/references/i18n/pt.md": {
+      "sha256": "1b72b8594a0f006b695cbf7dd12c4a002eede27d5217237536de01f47996af68",
+      "size": 3022
+    },
+    "skills/amazon-product-differentiation-rd/references/i18n/zh-CN.md": {
+      "sha256": "86c0e5856db60c9f153fb6f55ad5d12f6173cbfc5b9c20e6ca4b62c5efd99b4b",
+      "size": 2447
+    },
+    "skills/amazon-product-research-suite/SKILL.md": {
+      "sha256": "cc2a9506cdc62c3a53474b35abf60d9aa99735447094b77128b11cc182c8e5a6",
+      "size": 10194
+    },
+    "skills/amazon-product-research-suite/references/i18n/de.md": {
+      "sha256": "8d947ec3b4120d71d216c75f287b7cad2c161f65dcff7941bd88705b6f512167",
+      "size": 2987
+    },
+    "skills/amazon-product-research-suite/references/i18n/en.md": {
+      "sha256": "6a1105a87ed8faa0785850d5fcd26bf0f9789af8fb3a08fe5ead0f9ee5d066f1",
+      "size": 3010
+    },
+    "skills/amazon-product-research-suite/references/i18n/es.md": {
+      "sha256": "a726f7fb1b4760b8d074b476d1d19636da36fbb851ec5b727d5ff9ce0d78a44d",
+      "size": 2899
+    },
+    "skills/amazon-product-research-suite/references/i18n/fr.md": {
+      "sha256": "6798af420fe78d1a0e022888a8f917d6a95895f3e13963a704ba04164cd49d4e",
+      "size": 3061
+    },
+    "skills/amazon-product-research-suite/references/i18n/ja.md": {
+      "sha256": "841e6acf2ddff29fa712e753c1e96f8accc5eeead1f306e768b930f88a1851a2",
+      "size": 2921
+    },
+    "skills/amazon-product-research-suite/references/i18n/ko.md": {
+      "sha256": "8c85520a67fda87a0870dc2e35e72cd3b3c6f6d235051fe61bc93d55de20cc0c",
+      "size": 2913
+    },
+    "skills/amazon-product-research-suite/references/i18n/pt.md": {
+      "sha256": "914906b797dce457844eac34b93589a0c58807415aafdf92bea791a0113fb919",
+      "size": 2903
+    },
+    "skills/amazon-product-research-suite/references/i18n/zh-CN.md": {
+      "sha256": "34a2fe2d95b3a56a5ee739bbf2693a13463f73435a2b9f1605f2da4ee0c17577",
+      "size": 2381
+    },
+    "skills/amazon-supplier-feasibility/SKILL.md": {
+      "sha256": "86c0e0428b338e25621bc95823a9f681c156f5882f0012136f23eace4e3ae304",
+      "size": 6253
+    },
+    "skills/amazon-supplier-feasibility/references/i18n/de.md": {
+      "sha256": "14ec8f66a5a26f31e39b094cd711a0f4f97f5284d2b61bcf3d1bf7d92901e81b",
+      "size": 2936
+    },
+    "skills/amazon-supplier-feasibility/references/i18n/en.md": {
+      "sha256": "320fb8839c8fb49fa704b8666ce74e9c3c5054d0e2337d7c68edc149b74458f1",
+      "size": 2920
+    },
+    "skills/amazon-supplier-feasibility/references/i18n/es.md": {
+      "sha256": "19dc47fe0fef2ff5e8e2726e8d9a973bac249d7c63722a4f267a9016ea857a27",
+      "size": 2786
+    },
+    "skills/amazon-supplier-feasibility/references/i18n/fr.md": {
+      "sha256": "603540ec470c8c0ae929fa5e520863aea23edbffd07d1d1951eb13f489ec96bd",
+      "size": 2996
+    },
+    "skills/amazon-supplier-feasibility/references/i18n/ja.md": {
+      "sha256": "16a5d09ea4c8140f57717e9ee5d31c9d0d156b8fc2d29928b1d7aae1e5b14cc1",
+      "size": 2834
+    },
+    "skills/amazon-supplier-feasibility/references/i18n/ko.md": {
+      "sha256": "5fb5865cd8d12f59fa2e44434915ac2aed18284a2afbab987d51577026e23339",
+      "size": 2846
+    },
+    "skills/amazon-supplier-feasibility/references/i18n/pt.md": {
+      "sha256": "2ff8ff1c6a86615cfae7278c67ae03f962438a2ac1a3769d5969d845a1435d74",
+      "size": 2833
+    },
+    "skills/amazon-supplier-feasibility/references/i18n/zh-CN.md": {
+      "sha256": "b22ecef9693dddc99e8b844ec73ff368359fec2b8cbb4c1278df817a7180fdf7",
+      "size": 2336
+    },
+    "skills/amazon-unit-economics-cashflow/SKILL.md": {
+      "sha256": "dc0a55a1063105cd9b6f68ff02c9f703765c5d2305550f074499aca3530c8ad2",
+      "size": 5406
+    },
+    "skills/amazon-unit-economics-cashflow/references/i18n/de.md": {
+      "sha256": "6ee0036178496544215eeee979ba7438787b4d3286052d3206cff17ba344f69e",
+      "size": 2890
+    },
+    "skills/amazon-unit-economics-cashflow/references/i18n/en.md": {
+      "sha256": "e7ecd7975459a799b36fde086d7c0649fde49686739061cb6a5789949dd7e899",
+      "size": 2878
+    },
+    "skills/amazon-unit-economics-cashflow/references/i18n/es.md": {
+      "sha256": "afce1ef7b3a4b190ac0d075874848b47eaba769659301dac9e86fc80def96b3b",
+      "size": 2780
+    },
+    "skills/amazon-unit-economics-cashflow/references/i18n/fr.md": {
+      "sha256": "7a12c00f6807e8a2d875426fa0369e00f69ae4ff63004b8bc29b3b7f817d7ab2",
+      "size": 2965
+    },
+    "skills/amazon-unit-economics-cashflow/references/i18n/ja.md": {
+      "sha256": "e54a32be15d84163b6ab6f1ba53612487944ceafd4c403763d79dbb13e1c7a8b",
+      "size": 2782
+    },
+    "skills/amazon-unit-economics-cashflow/references/i18n/ko.md": {
+      "sha256": "0f377fa8776a137d853827bcef208be18367d6104642906c47fe96fb64d1af64",
+      "size": 2828
+    },
+    "skills/amazon-unit-economics-cashflow/references/i18n/pt.md": {
+      "sha256": "dea4a5ead3b5b3d22a8b675b28023dbf9d0590f0f59be99953bd8f10c2c4cd77",
+      "size": 2774
+    },
+    "skills/amazon-unit-economics-cashflow/references/i18n/zh-CN.md": {
+      "sha256": "aea9357427a1d5b918853e047f94e4f56e5ab28ed608b6e1bc4d740688798178",
+      "size": 2282
+    }
+  }
+}
