@@ -23,7 +23,7 @@
 
 **1 个路由器、7 个专业 Skill、统一证据契约和一条完整决策链。** 单一问题使用专业 Skill；当问题跨越市场、用户、研发、外观风险、供应链、财务和阶段门时，使用统一路由器。
 
-[下载最新 ZIP](https://github.com/PDBen-Auto/amazon-product-research-agent-skills/releases/latest/download/amazon-product-research-agent-skills-v0.1.1.zip) · [查看单位经济速览案例](https://pdben-auto.github.io/amazon-product-research-agent-skills/examples/magnetic-car-phone-mount/unit-economics-quick-case.html) · [在线查看完整决策案例](https://pdben-auto.github.io/amazon-product-research-agent-skills/examples/magnetic-car-phone-mount/decision-report.html) · [English](README.md)
+[下载最新 ZIP](https://github.com/PDBen-Auto/amazon-product-research-agent-skills/releases/latest/download/amazon-product-research-agent-skills.zip) · [查看单位经济速览案例](https://pdben-auto.github.io/amazon-product-research-agent-skills/examples/magnetic-car-phone-mount/unit-economics-quick-case.html) · [在线查看完整决策案例](https://pdben-auto.github.io/amazon-product-research-agent-skills/examples/magnetic-car-phone-mount/decision-report.html) · [English](README.md)
 
 想从完整案例中的单位经济测算开始，先安装 `amazon-unit-economics-cashflow`：
 

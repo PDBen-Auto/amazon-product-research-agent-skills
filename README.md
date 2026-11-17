@@ -25,7 +25,7 @@ Turn Amazon market, review, product, supplier, and cost evidence into an auditab
 
 **One router, seven specialist Agent Skills, one evidence contract, and one decision path.** Use a specialist for a narrow task or the suite router when a product question crosses market size, customer pain, differentiation, design risk, suppliers, economics, and stage gates.
 
-[Download the latest ZIP](https://github.com/PDBen-Auto/amazon-product-research-agent-skills/releases/latest/download/amazon-product-research-agent-skills-v0.1.1.zip) · [Read in Chinese](README.zh-CN.md) · [See the unit economics example](https://pdben-auto.github.io/amazon-product-research-agent-skills/examples/magnetic-car-phone-mount/unit-economics-quick-case.html) · [Open the full decision example](https://pdben-auto.github.io/amazon-product-research-agent-skills/examples/magnetic-car-phone-mount/decision-report.html)
+[Download the latest ZIP](https://github.com/PDBen-Auto/amazon-product-research-agent-skills/releases/latest/download/amazon-product-research-agent-skills.zip) · [Read in Chinese](README.zh-CN.md) · [See the unit economics example](https://pdben-auto.github.io/amazon-product-research-agent-skills/examples/magnetic-car-phone-mount/unit-economics-quick-case.html) · [Open the full decision example](https://pdben-auto.github.io/amazon-product-research-agent-skills/examples/magnetic-car-phone-mount/decision-report.html)
 
 To try the worked unit economics case with one Skill, install `amazon-unit-economics-cashflow`:
 
